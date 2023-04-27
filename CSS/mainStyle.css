@@ -1,0 +1,108 @@
+
+body
+    {
+        background-color:black;
+        color:aliceblue;
+        font-family:'Courier New', Courier, monospace;
+        padding: 4vh;
+    }
+
+header
+    {
+        display:flex;
+        flex-direction: column;
+        justify-content: center ;
+        -ms-flex-direction: column;
+    }
+p
+    {
+        font-size: x-large;
+        font-weight: bold;
+    }
+nav button
+    {
+        background-color:transparent;
+        color:aliceblue;
+        font-weight: bold;
+        font-size: large;
+        border-style: inset;
+        border-color: darkslategray;
+        border-width:.2vh;
+        border-radius: 5vh;
+        padding: 1vh;
+        margin:1vh;
+    }
+nav button:hover
+    {
+        transition: .7s;
+        background-color: darkgray;
+    }
+.contentContainer
+    {
+        display:block;
+    }  
+
+.htmlTags
+    {
+        color:darkslategrey;
+    }
+
+.sectionHeaders
+    {
+        color:darkslategrey;
+    }
+.descriptionText
+    {
+        color:darkslategray;
+
+    }
+.navBar
+    {
+        display:flex;
+        justify-content: center;
+        flex-direction:row;
+        -ms-flex-direction: row;
+    }
+#portfolioHeadshot
+    {
+        width:100%;
+        height:auto;
+    }
+#mySocials
+    {
+        display:flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+.socials
+    {
+        display:flex;
+        flex-direction:column;
+        -ms-flex-direction: column;
+    }
+.links
+    {
+        color:aliceblue;
+    }
+.socialLink
+    {
+        width:fit-content;
+        border-radius:.5vh;
+        padding-left: 1vh;
+        padding-right: 1vh;
+
+    }
+.socialLink:hover
+    {
+        background-color: darkgrey;
+        transition: .7s;
+    }
+#myBio
+    {
+        display:flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+
