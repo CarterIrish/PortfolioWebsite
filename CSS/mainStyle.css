@@ -36,6 +36,13 @@ nav button:hover
     {
         transition: .7s;
         background-color: darkgray;
+        scale:1.1;
+    }
+nav button:active
+    {
+       transition:.1s; 
+       transform: translate(.1vh,.2vh);
+       -ms-transform: translate(.1vh,.2vh);
     }
 .contentContainer
     {
@@ -80,12 +87,10 @@ nav button:hover
         flex-direction:column;
         -ms-flex-direction: column;
     }
-.links
-    {
-        color:aliceblue;
-    }
+
 .socialLink
     {
+        color:aliceblue;
         width:fit-content;
         border-radius:.5vh;
         padding-left: 1vh;
@@ -95,6 +100,7 @@ nav button:hover
 .socialLink:hover
     {
         background-color: darkgrey;
+        scale: 1.1;
         transition: .7s;
     }
 #myBio
