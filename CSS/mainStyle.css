@@ -67,6 +67,8 @@ nav button:active
     {
         display:flex;
         justify-content: center;
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
         flex-direction:row;
         -ms-flex-direction: row;
     }
@@ -109,6 +111,7 @@ nav button:active
         flex-direction: column;
         -ms-flex-direction: column;
         flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
     }
 
 
