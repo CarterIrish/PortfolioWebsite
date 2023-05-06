@@ -1,4 +1,10 @@
 
+body, * {
+    border-color:rgb(0, 255, 170);
+    border-style: dotted;
+    border-width: .1em;
+}
+
 body
     {
         background-color:black;
@@ -19,7 +25,7 @@ p
         font-size: x-large;
         font-weight: bold;
     }
-nav button
+ button
     {
         background-color:transparent;
         color:aliceblue;
@@ -32,13 +38,13 @@ nav button
         padding: 1vh;
         margin:1vh;
     }
-nav button:hover
+ button:hover
     {
         transition: .7s;
-        background-color: darkgray;
+        background-color: rgb(169, 169, 169);
         scale:1.1;
     }
-nav button:active
+ button:active
     {
        transition:.1s; 
        transform: translate(.1vh,.2vh);
@@ -112,6 +118,21 @@ nav button:active
         -ms-flex-direction: column;
         flex-wrap: wrap;
         -ms-flex-wrap: wrap;
+    }
+
+#projectMenu
+    {
+        display:flex;
+        flex-direction:row;
+        -ms-flex-direction: row;
+        flex-wrap:wrap;
+        -ms-flex-wrap: wrap;
+    }
+    .projectButtons
+    {
+        height:fit-content;
+        align-self: center;
+        margin-left: .5%;
     }
 
 
