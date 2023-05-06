@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <!-- The starter page for the Javascript exercise
+    Scripts can go both in the head and in the body, and there can be multiple scripts -->
+    <head>
+        <meta charset ="UTF-8">
+        <meta name = "description" content = "An intro to Javascript">
+        <meta name ="keywords" content="Javascript, programming">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Million Dollar WebApp</title>
+        <script src="ch21.2_extended_JavaScript.js"></script>
+        <style>
+            body
+            {
+                margin:2%;
+            }
+            header
+            {
+                background-color: rgba(255, 0, 0, 0.377);
+                color:rgb(255, 100, 100);
+                font-size: xx-large;
+            }
+            #header, #buttonGroup
+            {
+                text-align: center;
+                margin:1%;
+                
+            }
+            button
+            {
+                background-color: rgba(9, 255, 0, 0.336);
+                color:rgb(11, 124, 7);
+                font-weight: 700;
+                border-radius: 1em;
+                border-style: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <div id="header">This is a super cool web page<div>
+        </header>
+        <div id="buttonGroup">
+            <button type="button" onclick="showUnreadCount(5)">Click Me</button>
+            <button type="button" onclick="changeHeaderBackground()">Header Background</button>
+            <button type="button" onclick="customizePage()" id="pageCustomize">Page Customize</button>
+        </div>
+    </body>
+</html>
