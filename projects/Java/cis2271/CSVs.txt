@@ -1,0 +1,2 @@
+1729, San Francisco, "Hello, World", "He asked: ""Quo, vadis?"""
+1803, winooski vermont, "bonjour, manges", "He asked: ""you, are who?""", hello
