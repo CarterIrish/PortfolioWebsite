@@ -1,0 +1,290 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #629755; font-weight: bold; font-style: italic;}
+.s5 { color: #77b767; font-style: italic;}
+.s6 { color: #6a8759;}
+.s7 { color: #6897bb;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com.example.lab5_numbers</span><span class="s0">;</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span><span class="s1">android.content.SharedPreferences</span><span class="s0">;</span>
+<a name="l5"><span class="ln">5    </span></a><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<a name="l6"><span class="ln">6    </span></a><span class="s0">import </span><span class="s1">android.preference.PreferenceManager</span><span class="s0">;</span>
+<a name="l7"><span class="ln">7    </span></a><span class="s0">import </span><span class="s1">android.util.Log</span><span class="s0">;</span>
+<a name="l8"><span class="ln">8    </span></a><span class="s0">import </span><span class="s1">android.view.Menu</span><span class="s0">;</span>
+<a name="l9"><span class="ln">9    </span></a><span class="s0">import </span><span class="s1">android.view.MenuInflater</span><span class="s0">;</span>
+<a name="l10"><span class="ln">10   </span></a><span class="s0">import </span><span class="s1">android.view.MenuItem</span><span class="s0">;</span>
+<a name="l11"><span class="ln">11   </span></a><span class="s0">import </span><span class="s1">android.widget.TableLayout</span><span class="s0">;</span>
+<a name="l12"><span class="ln">12   </span></a><span class="s0">import </span><span class="s1">android.widget.TableRow</span><span class="s0">;</span>
+<a name="l13"><span class="ln">13   </span></a><span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+<a name="l14"><span class="ln">14   </span></a><span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span>
+<a name="l15"><span class="ln">15   </span></a><span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<a name="l16"><span class="ln">16   </span></a><span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+<a name="l17"><span class="ln">17   </span></a>
+<a name="l18"><span class="ln">18   </span></a>
+<a name="l19"><span class="ln">19   </span></a><span class="s0">import </span><span class="s1">org.w3c.dom.Text</span><span class="s0">;</span>
+<a name="l20"><span class="ln">20   </span></a>
+<a name="l21"><span class="ln">21   </span></a><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s0">implements </span><span class="s1">SharedPreferences.OnSharedPreferenceChangeListener {</span>
+<a name="l22"><span class="ln">22   </span></a>    <span class="s0">private int </span><span class="s1">_tableMin</span><span class="s0">; </span><span class="s2">// minimum starting number for table</span>
+<a name="l23"><span class="ln">23   </span></a>    <span class="s0">private int </span><span class="s1">_tableMax</span><span class="s0">; </span><span class="s2">// maximum ending value for the table</span>
+<a name="l24"><span class="ln">24   </span></a>    <span class="s0">private </span><span class="s1">TextView _rangeDisplay</span><span class="s0">; </span><span class="s2">// the TextView containing a string of the range</span>
+<a name="l25"><span class="ln">25   </span></a>    <span class="s0">private </span><span class="s1">TableLayout _parentTable</span><span class="s0">; </span><span class="s2">// the TableLayout containing the table after generation</span>
+<a name="l26"><span class="ln">26   </span></a>    <span class="s0">private </span><span class="s1">SharedPreferences _preferences</span><span class="s0">; </span><span class="s2">// the preferences that the user sets in the pref activity</span>
+<a name="l27"><span class="ln">27   </span></a>    <span class="s0">private </span><span class="s1">Boolean _sqrCol</span><span class="s0">; </span><span class="s2">// boolean var which determines if the column is visible</span>
+<a name="l28"><span class="ln">28   </span></a>    <span class="s0">private </span><span class="s1">Boolean _cubeCol</span><span class="s0">; </span><span class="s2">// boolean var which determines if the column is visible</span>
+<a name="l29"><span class="ln">29   </span></a>    <span class="s0">private </span><span class="s1">Boolean _sqrtCol</span><span class="s0">; </span><span class="s2">// boolean var which determines if the column is visible</span>
+<a name="l30"><span class="ln">30   </span></a>    <span class="s0">private </span><span class="s1">Boolean _factorialCol</span><span class="s0">; </span><span class="s2">// boolean var which determines if the column is visible</span>
+<a name="l31"><span class="ln">31   </span></a>    <span class="s0">private </span><span class="s1">Boolean _baseCol</span><span class="s0">; </span><span class="s2">// boolean var which determines if the column is visible</span>
+<a name="l32"><span class="ln">32   </span></a>
+<a name="l33"><span class="ln">33   </span></a>    <span class="s3">/**</span>
+<a name="l34"><span class="ln">34   </span></a>     <span class="s3">*</span>
+<a name="l35"><span class="ln">35   </span></a>     <span class="s3">* </span><span class="s4">@param </span><span class="s3">savedInstanceState If the activity is being re-initialized after</span>
+<a name="l36"><span class="ln">36   </span></a>     <span class="s3">*     previously being shut down then this Bundle contains the data it most</span>
+<a name="l37"><span class="ln">37   </span></a>     <span class="s3">*     recently supplied in {</span><span class="s4">@link </span><span class="s3">#onSaveInstanceState}.  </span><span class="s5">&lt;b&gt;&lt;i&gt;</span><span class="s3">Note: Otherwise it is null.</span><span class="s5">&lt;/i&gt;&lt;/b&gt;</span>
+<a name="l38"><span class="ln">38   </span></a>     <span class="s3">*</span>
+<a name="l39"><span class="ln">39   </span></a>     <span class="s3">*/</span>
+<a name="l40"><span class="ln">40   </span></a>    <span class="s1">@Override</span>
+<a name="l41"><span class="ln">41   </span></a>    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState)</span>
+<a name="l42"><span class="ln">42   </span></a>    <span class="s1">{</span>
+<a name="l43"><span class="ln">43   </span></a>        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+<a name="l44"><span class="ln">44   </span></a>        <span class="s1">setContentView(R.layout.activity_main)</span><span class="s0">;</span>
+<a name="l45"><span class="ln">45   </span></a>        <span class="s2">// below I assign the textview and tablelayout as well as preferences to their variables</span>
+<a name="l46"><span class="ln">46   </span></a>        <span class="s1">_parentTable = findViewById(R.id.tableLayout)</span><span class="s0">;</span>
+<a name="l47"><span class="ln">47   </span></a>        <span class="s1">_rangeDisplay = findViewById(R.id.rangeDisplay)</span><span class="s0">;</span>
+<a name="l48"><span class="ln">48   </span></a>        <span class="s1">_preferences = PreferenceManager.getDefaultSharedPreferences(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l49"><span class="ln">49   </span></a>        <span class="s1">_preferences.registerOnSharedPreferenceChangeListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l50"><span class="ln">50   </span></a>        <span class="s1">_tableMax = Integer.valueOf(_preferences.getString(</span><span class="s6">&quot;maxValue&quot;</span><span class="s0">,</span><span class="s6">&quot;10&quot;</span><span class="s1">))</span><span class="s0">;</span>
+<a name="l51"><span class="ln">51   </span></a>        <span class="s1">_tableMin = Integer.valueOf(_preferences.getString(</span><span class="s6">&quot;minValue&quot;</span><span class="s0">,</span><span class="s6">&quot;1&quot;</span><span class="s1">))</span><span class="s0">;</span>
+<a name="l52"><span class="ln">52   </span></a>        <span class="s1">_sqrCol = _preferences.getBoolean(</span><span class="s6">&quot;sqrCol&quot;</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l53"><span class="ln">53   </span></a>        <span class="s1">_cubeCol = _preferences.getBoolean(</span><span class="s6">&quot;cubeCol&quot;</span><span class="s0">, true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l54"><span class="ln">54   </span></a>        <span class="s1">_sqrtCol = _preferences.getBoolean(</span><span class="s6">&quot;sqrtCol&quot;</span><span class="s0">, true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l55"><span class="ln">55   </span></a>        <span class="s1">_factorialCol = _preferences.getBoolean(</span><span class="s6">&quot;factorialCol&quot;</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l56"><span class="ln">56   </span></a>        <span class="s1">_baseCol = _preferences.getBoolean(</span><span class="s6">&quot;baseNumCol&quot;</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l57"><span class="ln">57   </span></a>
+<a name="l58"><span class="ln">58   </span></a>        <span class="s2">// Create the the table</span>
+<a name="l59"><span class="ln">59   </span></a>        <span class="s1">start()</span><span class="s0">;</span>
+<a name="l60"><span class="ln">60   </span></a>
+<a name="l61"><span class="ln">61   </span></a>        <span class="s2">// From here down, any time a check settings is enabled, the table will react &amp; collapse</span>
+<a name="l62"><span class="ln">62   </span></a>        <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">0</span><span class="s0">,</span><span class="s1">!_baseCol)</span><span class="s0">;</span>
+<a name="l63"><span class="ln">63   </span></a>        <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">1</span><span class="s0">,</span><span class="s1">!_sqrCol)</span><span class="s0">;</span>
+<a name="l64"><span class="ln">64   </span></a>        <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">2</span><span class="s0">,</span><span class="s1">!_cubeCol)</span><span class="s0">;</span>
+<a name="l65"><span class="ln">65   </span></a>        <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">3</span><span class="s0">,</span><span class="s1">!_sqrtCol)</span><span class="s0">;</span>
+<a name="l66"><span class="ln">66   </span></a>        <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">4</span><span class="s0">,</span><span class="s1">!_factorialCol)</span><span class="s0">;</span>
+<a name="l67"><span class="ln">67   </span></a>
+<a name="l68"><span class="ln">68   </span></a>    <span class="s1">}</span>
+<a name="l69"><span class="ln">69   </span></a>
+<a name="l70"><span class="ln">70   </span></a>    <span class="s3">/**</span>
+<a name="l71"><span class="ln">71   </span></a>     <span class="s3">*</span>
+<a name="l72"><span class="ln">72   </span></a>     <span class="s3">* </span><span class="s4">@param </span><span class="s3">menu The options menu in which you place your items.</span>
+<a name="l73"><span class="ln">73   </span></a>     <span class="s3">*</span>
+<a name="l74"><span class="ln">74   </span></a>     <span class="s3">* </span><span class="s4">@return</span>
+<a name="l75"><span class="ln">75   </span></a>     <span class="s3">*/</span>
+<a name="l76"><span class="ln">76   </span></a>    <span class="s1">@Override</span>
+<a name="l77"><span class="ln">77   </span></a>    <span class="s0">public boolean </span><span class="s1">onCreateOptionsMenu(Menu menu)</span>
+<a name="l78"><span class="ln">78   </span></a>    <span class="s1">{</span>
+<a name="l79"><span class="ln">79   </span></a>        <span class="s1">MenuInflater inflater = getMenuInflater()</span><span class="s0">;</span>
+<a name="l80"><span class="ln">80   </span></a>        <span class="s1">inflater.inflate(R.menu.menu</span><span class="s0">, </span><span class="s1">menu)</span><span class="s0">;</span>
+<a name="l81"><span class="ln">81   </span></a>
+<a name="l82"><span class="ln">82   </span></a>        <span class="s0">return true;</span>
+<a name="l83"><span class="ln">83   </span></a>    <span class="s1">}</span>
+<a name="l84"><span class="ln">84   </span></a>
+<a name="l85"><span class="ln">85   </span></a>    <span class="s3">/**</span>
+<a name="l86"><span class="ln">86   </span></a>     <span class="s3">*</span>
+<a name="l87"><span class="ln">87   </span></a>     <span class="s3">* </span><span class="s4">@param </span><span class="s3">item The menu item that was selected.</span>
+<a name="l88"><span class="ln">88   </span></a>     <span class="s3">*</span>
+<a name="l89"><span class="ln">89   </span></a>     <span class="s3">* </span><span class="s4">@return</span>
+<a name="l90"><span class="ln">90   </span></a>     <span class="s3">*/</span>
+<a name="l91"><span class="ln">91   </span></a>    <span class="s1">@Override</span>
+<a name="l92"><span class="ln">92   </span></a>    <span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(@NonNull MenuItem item)</span>
+<a name="l93"><span class="ln">93   </span></a>    <span class="s1">{</span>
+<a name="l94"><span class="ln">94   </span></a>        <span class="s0">switch </span><span class="s1">(item.getItemId())</span>
+<a name="l95"><span class="ln">95   </span></a>        <span class="s1">{</span>
+<a name="l96"><span class="ln">96   </span></a>            <span class="s0">case </span><span class="s1">R.id.aboutMe:</span>
+<a name="l97"><span class="ln">97   </span></a>                <span class="s1">Toast.makeText(</span><span class="s0">this,</span><span class="s6">&quot;About me was selected&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+<a name="l98"><span class="ln">98   </span></a>                <span class="s1">switchAboutMeAct()</span><span class="s0">;</span>
+<a name="l99"><span class="ln">99   </span></a>                <span class="s0">return true;</span>
+<a name="l100"><span class="ln">100  </span></a>            <span class="s0">case </span><span class="s1">R.id.appPref:</span>
+<a name="l101"><span class="ln">101  </span></a>                <span class="s1">Toast.makeText(</span><span class="s0">this,</span><span class="s6">&quot;Preferences was selected&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+<a name="l102"><span class="ln">102  </span></a>                <span class="s1">switchSettingsAct()</span><span class="s0">;</span>
+<a name="l103"><span class="ln">103  </span></a>            <span class="s0">default</span><span class="s1">:</span>
+<a name="l104"><span class="ln">104  </span></a>                <span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item)</span><span class="s0">;</span>
+<a name="l105"><span class="ln">105  </span></a>        <span class="s1">}</span>
+<a name="l106"><span class="ln">106  </span></a>    <span class="s1">}</span>
+<a name="l107"><span class="ln">107  </span></a>
+<a name="l108"><span class="ln">108  </span></a>    <span class="s3">/**</span>
+<a name="l109"><span class="ln">109  </span></a>     <span class="s3">* Used to switch screens with a settings window</span>
+<a name="l110"><span class="ln">110  </span></a>     <span class="s3">*/</span>
+<a name="l111"><span class="ln">111  </span></a>    <span class="s0">private void </span><span class="s1">switchSettingsAct()</span>
+<a name="l112"><span class="ln">112  </span></a>    <span class="s1">{</span>
+<a name="l113"><span class="ln">113  </span></a>        <span class="s1">Intent switchActivityIntent = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this, </span><span class="s1">PrefActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l114"><span class="ln">114  </span></a>        <span class="s1">startActivity(switchActivityIntent)</span><span class="s0">;</span>
+<a name="l115"><span class="ln">115  </span></a>    <span class="s1">}</span>
+<a name="l116"><span class="ln">116  </span></a>
+<a name="l117"><span class="ln">117  </span></a>    <span class="s3">/**</span>
+<a name="l118"><span class="ln">118  </span></a>     <span class="s3">* Used to switch screens with an about me window</span>
+<a name="l119"><span class="ln">119  </span></a>     <span class="s3">*/</span>
+<a name="l120"><span class="ln">120  </span></a>    <span class="s0">private void </span><span class="s1">switchAboutMeAct()</span>
+<a name="l121"><span class="ln">121  </span></a>    <span class="s1">{</span>
+<a name="l122"><span class="ln">122  </span></a>        <span class="s1">Intent switchActivityIntent = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this, </span><span class="s1">AboutMeActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l123"><span class="ln">123  </span></a>        <span class="s1">startActivity(switchActivityIntent)</span><span class="s0">;</span>
+<a name="l124"><span class="ln">124  </span></a>    <span class="s1">}</span>
+<a name="l125"><span class="ln">125  </span></a>
+<a name="l126"><span class="ln">126  </span></a>
+<a name="l127"><span class="ln">127  </span></a>    <span class="s3">/**</span>
+<a name="l128"><span class="ln">128  </span></a>     <span class="s3">*</span>
+<a name="l129"><span class="ln">129  </span></a>     <span class="s3">* </span><span class="s4">@param </span><span class="s3">n The selected number to factor</span>
+<a name="l130"><span class="ln">130  </span></a>     <span class="s3">* </span><span class="s4">@return</span>
+<a name="l131"><span class="ln">131  </span></a>     <span class="s3">*/</span>
+<a name="l132"><span class="ln">132  </span></a>    <span class="s0">public </span><span class="s1">String factorial(</span><span class="s0">double </span><span class="s1">n)</span>
+<a name="l133"><span class="ln">133  </span></a>    <span class="s1">{</span>
+<a name="l134"><span class="ln">134  </span></a>        <span class="s0">int </span><span class="s1">fact=</span><span class="s7">1</span><span class="s0">;</span>
+<a name="l135"><span class="ln">135  </span></a>        <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s7">1</span><span class="s0">;</span><span class="s1">i&lt;=n</span><span class="s0">;</span><span class="s1">i++) </span><span class="s2">// calculate the factorial of n or n!</span>
+<a name="l136"><span class="ln">136  </span></a>        <span class="s1">{</span>
+<a name="l137"><span class="ln">137  </span></a>            <span class="s1">fact=fact*i</span><span class="s0">;</span>
+<a name="l138"><span class="ln">138  </span></a>        <span class="s1">}</span>
+<a name="l139"><span class="ln">139  </span></a>        <span class="s0">if </span><span class="s1">(fact&gt;</span><span class="s7">99999999 </span><span class="s1">|| fact&lt;=</span><span class="s7">0</span><span class="s1">) </span><span class="s2">// if the number is too large ie. longer than 8 digits it will be inaccurate. so its replaced with *'s</span>
+<a name="l140"><span class="ln">140  </span></a>        <span class="s1">{</span>
+<a name="l141"><span class="ln">141  </span></a>            <span class="s0">return </span><span class="s6">&quot;*********&quot;</span><span class="s0">;</span>
+<a name="l142"><span class="ln">142  </span></a>        <span class="s1">}</span>
+<a name="l143"><span class="ln">143  </span></a>        <span class="s0">return </span><span class="s1">String.valueOf(fact)</span><span class="s0">;</span>
+<a name="l144"><span class="ln">144  </span></a>    <span class="s1">}</span>
+<a name="l145"><span class="ln">145  </span></a>
+<a name="l146"><span class="ln">146  </span></a>    <span class="s3">/**</span>
+<a name="l147"><span class="ln">147  </span></a>     <span class="s3">* Used to create the table with min &amp; max values set using _minValue &amp; _maxValue</span>
+<a name="l148"><span class="ln">148  </span></a>     <span class="s3">*/</span>
+<a name="l149"><span class="ln">149  </span></a>    <span class="s0">public void </span><span class="s1">start()</span>
+<a name="l150"><span class="ln">150  </span></a>    <span class="s1">{</span>
+<a name="l151"><span class="ln">151  </span></a>        <span class="s1">_rangeDisplay.setText(</span><span class="s6">&quot;The range is : &quot; </span><span class="s1">+_tableMin+</span><span class="s6">&quot; to &quot;</span><span class="s1">+_tableMax)</span><span class="s0">;</span>
+<a name="l152"><span class="ln">152  </span></a>        <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;Header row created&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l153"><span class="ln">153  </span></a>        <span class="s2">// Row of headers</span>
+<a name="l154"><span class="ln">154  </span></a>        <span class="s1">TableRow headerRow = </span><span class="s0">new </span><span class="s1">TableRow(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l155"><span class="ln">155  </span></a>        <span class="s1">_parentTable.addView(headerRow)</span><span class="s0">;</span>
+<a name="l156"><span class="ln">156  </span></a>        <span class="s2">// First column header</span>
+<a name="l157"><span class="ln">157  </span></a>        <span class="s1">TextView header1 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l158"><span class="ln">158  </span></a>        <span class="s1">header1.setText(</span><span class="s6">&quot;Base Number&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l159"><span class="ln">159  </span></a>        <span class="s1">headerRow.addView(header1)</span><span class="s0">;</span>
+<a name="l160"><span class="ln">160  </span></a>        <span class="s2">// second column header</span>
+<a name="l161"><span class="ln">161  </span></a>        <span class="s1">TextView header2 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l162"><span class="ln">162  </span></a>        <span class="s1">header2.setText(</span><span class="s6">&quot;Squared&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l163"><span class="ln">163  </span></a>        <span class="s1">headerRow.addView(header2)</span><span class="s0">;</span>
+<a name="l164"><span class="ln">164  </span></a>        <span class="s2">// third column header</span>
+<a name="l165"><span class="ln">165  </span></a>        <span class="s1">TextView header3 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l166"><span class="ln">166  </span></a>        <span class="s1">header3.setText(</span><span class="s6">&quot;Cubed&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l167"><span class="ln">167  </span></a>        <span class="s1">headerRow.addView(header3)</span><span class="s0">;</span>
+<a name="l168"><span class="ln">168  </span></a>        <span class="s2">// fourth column header</span>
+<a name="l169"><span class="ln">169  </span></a>        <span class="s1">TextView header4 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l170"><span class="ln">170  </span></a>        <span class="s1">header4.setText(</span><span class="s6">&quot;Sqrt&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l171"><span class="ln">171  </span></a>        <span class="s1">headerRow.addView(header4)</span><span class="s0">;</span>
+<a name="l172"><span class="ln">172  </span></a>        <span class="s2">// fifth column</span>
+<a name="l173"><span class="ln">173  </span></a>        <span class="s1">TextView header5 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l174"><span class="ln">174  </span></a>        <span class="s1">header5.setText(</span><span class="s6">&quot;Fact&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l175"><span class="ln">175  </span></a>        <span class="s1">headerRow.addView(header5)</span><span class="s0">;</span>
+<a name="l176"><span class="ln">176  </span></a>        <span class="s2">// The data cells</span>
+<a name="l177"><span class="ln">177  </span></a>        <span class="s0">for</span><span class="s1">(</span><span class="s0">double </span><span class="s1">i=</span><span class="s0">this</span><span class="s1">._tableMin</span><span class="s0">;</span><span class="s1">i&lt;(</span><span class="s0">this</span><span class="s1">._tableMax+</span><span class="s7">1</span><span class="s1">)</span><span class="s0">;</span><span class="s1">i++)</span>
+<a name="l178"><span class="ln">178  </span></a>        <span class="s1">{</span>
+<a name="l179"><span class="ln">179  </span></a>            <span class="s2">// adding in the row</span>
+<a name="l180"><span class="ln">180  </span></a>            <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;Row Created&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l181"><span class="ln">181  </span></a>                <span class="s1">TableRow row = </span><span class="s0">new </span><span class="s1">TableRow(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l182"><span class="ln">182  </span></a>                <span class="s1">_parentTable.addView(row)</span><span class="s0">;</span>
+<a name="l183"><span class="ln">183  </span></a>            <span class="s2">// filling in the first column</span>
+<a name="l184"><span class="ln">184  </span></a>            <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;new TextView added #1&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l185"><span class="ln">185  </span></a>                <span class="s1">TextView textView1 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l186"><span class="ln">186  </span></a>                <span class="s1">textView1.setText(</span><span class="s6">&quot;&quot;</span><span class="s1">+i)</span><span class="s0">;</span>
+<a name="l187"><span class="ln">187  </span></a>                <span class="s1">row.addView(textView1)</span><span class="s0">;</span>
+<a name="l188"><span class="ln">188  </span></a>            <span class="s2">// filling in the second column</span>
+<a name="l189"><span class="ln">189  </span></a>            <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;new TextView added #2&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l190"><span class="ln">190  </span></a>                <span class="s1">TextView textView2 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l191"><span class="ln">191  </span></a>                <span class="s1">textView2.setText(String.format(</span><span class="s6">&quot;%.2f&quot;</span><span class="s0">, </span><span class="s1">Math.pow(i</span><span class="s0">,</span><span class="s7">2</span><span class="s1">)))</span><span class="s0">;</span>
+<a name="l192"><span class="ln">192  </span></a>                <span class="s1">row.addView(textView2)</span><span class="s0">;</span>
+<a name="l193"><span class="ln">193  </span></a>            <span class="s2">// filling in the third column</span>
+<a name="l194"><span class="ln">194  </span></a>            <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;new TextView added #3&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l195"><span class="ln">195  </span></a>                <span class="s1">TextView textView3 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l196"><span class="ln">196  </span></a>                <span class="s1">textView3.setText(String.format(</span><span class="s6">&quot;%.2f&quot;</span><span class="s0">, </span><span class="s1">Math.pow(i</span><span class="s0">,</span><span class="s7">3</span><span class="s1">)))</span><span class="s0">;</span>
+<a name="l197"><span class="ln">197  </span></a>                <span class="s1">row.addView(textView3)</span><span class="s0">;</span>
+<a name="l198"><span class="ln">198  </span></a>            <span class="s2">// filling in the fourth column</span>
+<a name="l199"><span class="ln">199  </span></a>            <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;new TextView added #4&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l200"><span class="ln">200  </span></a>                <span class="s1">TextView textView4 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l201"><span class="ln">201  </span></a>                <span class="s1">textView4.setText(String.format(</span><span class="s6">&quot;%.2f&quot;</span><span class="s0">, </span><span class="s1">Math.sqrt(i)))</span><span class="s0">;</span>
+<a name="l202"><span class="ln">202  </span></a>                <span class="s1">row.addView(textView4)</span><span class="s0">;</span>
+<a name="l203"><span class="ln">203  </span></a>            <span class="s2">// filling in the fifth column</span>
+<a name="l204"><span class="ln">204  </span></a>            <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;new TextView added #5&quot;</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l205"><span class="ln">205  </span></a>                <span class="s1">TextView textView5 = </span><span class="s0">new </span><span class="s1">TextView(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l206"><span class="ln">206  </span></a>                <span class="s1">textView5.setText(factorial(i))</span><span class="s0">;</span>
+<a name="l207"><span class="ln">207  </span></a>                <span class="s1">row.addView(textView5)</span><span class="s0">;</span>
+<a name="l208"><span class="ln">208  </span></a>        <span class="s1">}</span>
+<a name="l209"><span class="ln">209  </span></a>    <span class="s1">}</span>
+<a name="l210"><span class="ln">210  </span></a>
+<a name="l211"><span class="ln">211  </span></a>    <span class="s3">/**</span>
+<a name="l212"><span class="ln">212  </span></a>     <span class="s3">*</span>
+<a name="l213"><span class="ln">213  </span></a>     <span class="s3">* </span><span class="s4">@param </span><span class="s3">sharedPreferences The {</span><span class="s4">@link </span><span class="s3">SharedPreferences} that received the change.</span>
+<a name="l214"><span class="ln">214  </span></a>     <span class="s3">* </span><span class="s4">@param </span><span class="s3">key The key of the preference that was changed, added, or removed. Apps targeting</span>
+<a name="l215"><span class="ln">215  </span></a>     <span class="s3">*            {</span><span class="s4">@link </span><span class="s3">android.os.Build.VERSION_CODES#R} on devices running OS versions</span>
+<a name="l216"><span class="ln">216  </span></a>     <span class="s3">*            {</span><span class="s4">@link </span><span class="s3">android.os.Build.VERSION_CODES#R Android R} or later, will receive</span>
+<a name="l217"><span class="ln">217  </span></a>     <span class="s3">*            a {</span><span class="s4">@code </span><span class="s3">null} value when preferences are cleared.</span>
+<a name="l218"><span class="ln">218  </span></a>     <span class="s3">*/</span>
+<a name="l219"><span class="ln">219  </span></a>    <span class="s1">@Override</span>
+<a name="l220"><span class="ln">220  </span></a>    <span class="s0">public void </span><span class="s1">onSharedPreferenceChanged(SharedPreferences sharedPreferences</span><span class="s0">, </span><span class="s1">String key)</span>
+<a name="l221"><span class="ln">221  </span></a>    <span class="s1">{</span>
+<a name="l222"><span class="ln">222  </span></a>        <span class="s1">Log.i(</span><span class="s6">&quot;Carter&quot;</span><span class="s0">, </span><span class="s6">&quot;key changed &quot;</span><span class="s1">+key)</span><span class="s0">;</span>
+<a name="l223"><span class="ln">223  </span></a>        <span class="s0">switch</span><span class="s1">(key)</span>
+<a name="l224"><span class="ln">224  </span></a>        <span class="s1">{</span>
+<a name="l225"><span class="ln">225  </span></a>            <span class="s2">// called if the baseNumCol preference is changed</span>
+<a name="l226"><span class="ln">226  </span></a>            <span class="s0">case </span><span class="s6">&quot;baseNumCol&quot;</span><span class="s1">:</span>
+<a name="l227"><span class="ln">227  </span></a>                <span class="s1">Boolean showNumber0 = _preferences.getBoolean(key</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l228"><span class="ln">228  </span></a>                <span class="s1">Log.i(</span><span class="s6">&quot;carter&quot;</span><span class="s0">,</span><span class="s6">&quot;Bool val: &quot;</span><span class="s1">+_baseCol)</span><span class="s0">;</span>
+<a name="l229"><span class="ln">229  </span></a>                <span class="s0">break;</span>
+<a name="l230"><span class="ln">230  </span></a>            <span class="s2">// called if the sqrCol preference is changed</span>
+<a name="l231"><span class="ln">231  </span></a>            <span class="s0">case </span><span class="s6">&quot;sqrCol&quot;</span><span class="s1">:</span>
+<a name="l232"><span class="ln">232  </span></a>                <span class="s1">Boolean showNumber1 = _preferences.getBoolean(key</span><span class="s0">, true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l233"><span class="ln">233  </span></a>                <span class="s1">Log.i(</span><span class="s6">&quot;carter&quot;</span><span class="s0">, </span><span class="s6">&quot;Bool val: &quot;</span><span class="s1">+_sqrCol)</span><span class="s0">;</span>
+<a name="l234"><span class="ln">234  </span></a>                <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">1</span><span class="s0">,</span><span class="s1">!showNumber1)</span><span class="s0">;</span>
+<a name="l235"><span class="ln">235  </span></a>                <span class="s0">break;</span>
+<a name="l236"><span class="ln">236  </span></a>            <span class="s2">// called if the sqrtCol preference is changed</span>
+<a name="l237"><span class="ln">237  </span></a>            <span class="s0">case </span><span class="s6">&quot;sqrtCol&quot;</span><span class="s1">:</span>
+<a name="l238"><span class="ln">238  </span></a>                <span class="s1">Boolean showNumber2 = _preferences.getBoolean(key</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l239"><span class="ln">239  </span></a>                <span class="s1">Log.i(</span><span class="s6">&quot;carter&quot;</span><span class="s0">, </span><span class="s6">&quot;Bool val: &quot;</span><span class="s1">+_sqrtCol)</span><span class="s0">;</span>
+<a name="l240"><span class="ln">240  </span></a>                <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">3</span><span class="s0">,</span><span class="s1">!showNumber2)</span><span class="s0">;</span>
+<a name="l241"><span class="ln">241  </span></a>                <span class="s0">break;</span>
+<a name="l242"><span class="ln">242  </span></a>            <span class="s2">// called if the cubeCol preference is changed</span>
+<a name="l243"><span class="ln">243  </span></a>            <span class="s0">case </span><span class="s6">&quot;cubeCol&quot;</span><span class="s1">:</span>
+<a name="l244"><span class="ln">244  </span></a>                <span class="s1">Boolean showNumber3 = _preferences.getBoolean(key</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l245"><span class="ln">245  </span></a>                <span class="s1">Log.i(</span><span class="s6">&quot;carter&quot;</span><span class="s0">, </span><span class="s6">&quot;Bool val: &quot;</span><span class="s1">+_cubeCol)</span><span class="s0">;</span>
+<a name="l246"><span class="ln">246  </span></a>                <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">2</span><span class="s0">,</span><span class="s1">!showNumber3)</span><span class="s0">;</span>
+<a name="l247"><span class="ln">247  </span></a>                <span class="s0">break;</span>
+<a name="l248"><span class="ln">248  </span></a>            <span class="s2">// called if the factorialCol preference is changed</span>
+<a name="l249"><span class="ln">249  </span></a>            <span class="s0">case </span><span class="s6">&quot;factorialCol&quot;</span><span class="s1">:</span>
+<a name="l250"><span class="ln">250  </span></a>                <span class="s1">Boolean showNumber4 = _preferences.getBoolean(key</span><span class="s0">,true</span><span class="s1">)</span><span class="s0">;</span>
+<a name="l251"><span class="ln">251  </span></a>                <span class="s1">Log.i(</span><span class="s6">&quot;carter&quot;</span><span class="s0">,</span><span class="s6">&quot;Bool val: &quot;</span><span class="s1">+_factorialCol)</span><span class="s0">;</span>
+<a name="l252"><span class="ln">252  </span></a>                <span class="s1">_parentTable.setColumnCollapsed(</span><span class="s7">4</span><span class="s0">,</span><span class="s1">!showNumber4)</span><span class="s0">;</span>
+<a name="l253"><span class="ln">253  </span></a>                <span class="s0">break;</span>
+<a name="l254"><span class="ln">254  </span></a>            <span class="s2">// called if the maxValue preference is changed</span>
+<a name="l255"><span class="ln">255  </span></a>            <span class="s0">case </span><span class="s6">&quot;maxValue&quot;</span><span class="s1">:</span>
+<a name="l256"><span class="ln">256  </span></a>                <span class="s1">_tableMax = Integer.valueOf(_preferences.getString(</span><span class="s6">&quot;maxValue&quot;</span><span class="s0">,</span><span class="s6">&quot;10&quot;</span><span class="s1">))</span><span class="s0">;</span>
+<a name="l257"><span class="ln">257  </span></a>                <span class="s1">start()</span><span class="s0">; </span><span class="s2">// call start() because I changed the range which means I need to redo the table instead of just hiding the columns</span>
+<a name="l258"><span class="ln">258  </span></a>                <span class="s0">break;</span>
+<a name="l259"><span class="ln">259  </span></a>            <span class="s2">// called if the minValue preference is changed</span>
+<a name="l260"><span class="ln">260  </span></a>            <span class="s0">case </span><span class="s6">&quot;minValue&quot;</span><span class="s1">:</span>
+<a name="l261"><span class="ln">261  </span></a>                <span class="s1">_tableMin = Integer.valueOf(_preferences.getString(</span><span class="s6">&quot;minValue&quot;</span><span class="s0">,</span><span class="s6">&quot;1&quot;</span><span class="s1">))</span><span class="s0">;</span>
+<a name="l262"><span class="ln">262  </span></a>                <span class="s1">start()</span><span class="s0">; </span><span class="s2">// call start() because I changed the range which means I need to redo the table instead of just hiding the columns</span>
+<a name="l263"><span class="ln">263  </span></a>                <span class="s0">break;</span>
+<a name="l264"><span class="ln">264  </span></a>        <span class="s1">}</span>
+<a name="l265"><span class="ln">265  </span></a>    <span class="s1">}</span>
+<a name="l266"><span class="ln">266  </span></a><span class="s1">}</span></pre>
+</body>
+</html>
