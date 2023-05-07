@@ -1,18 +1,8 @@
-/**
- * Book.java
- * Copyright 2015, Craig A. Damon
- * all rights reserved
- */
 package edu.vtc.cis2271;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Book - description
- * @author Craig A. Damon
- *
- */
 public class Book
 {
 	/**

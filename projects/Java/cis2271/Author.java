@@ -1,8 +1,3 @@
-/**
- * Author.java
- * Copyright 2015, Craig A. Damon
- * all rights reserved
- */
 package edu.vtc.cis2271;
 
 import java.util.List;
@@ -12,11 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/**
- * Author - an author who has (or will) written one or more books
- * @author Craig A. Damon
- *
- */
 public class Author
 {
 
