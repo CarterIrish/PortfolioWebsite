@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week #12: iFrames!!</title>
+    <style>
+      .example-child iframe,
+      p {
+        border: none;
+        width: 50%;
+        height: 100vh;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example">
+      <div class="example-child">
+        <iframe src="/index.html" title="ClassWebsite"></iframe>
+      </div>
+      <div class="example-child">
+        <p>
+          Too the left of this div element is another div element. In the other
+          div element there exists an iframe element. The iframe element in html
+          allows one webpage to embed another webpage within itself. It is not
+          always an option however, if the website contains an
+          <code>X-Frame-Options header</code>. This header is used as a security
+          measure by browsers to stop click-jacking attemts on websites.
+          essentially preventing them from being embeded into a malicious
+          webpage that wants you steal information from you.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <title>Exercise 8-1: Tables</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      body {
+        margin: 6em;
+      }
+      td,
+      th {
+        border: 1px solid gray;
+      }
+      table {
+        color: red;
+        border-style: groove;
+        border-color: aqua;
+      }
+      div {
+        margin: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <table id="exercise_8-1">
+        <tr>
+          <th>Album</th>
+          <th>Year</th>
+        </tr>
+        <tr>
+          <td>Rubber Soul</td>
+          <td>1965</td>
+        </tr>
+        <tr>
+          <td>Revolver</td>
+          <td>1966</td>
+        </tr>
+        <tr>
+          <td>Sgt. Pepper's</td>
+          <td>1967</td>
+        </tr>
+        <tr>
+          <td>The White Album</td>
+          <td>1968</td>
+        </tr>
+        <tr>
+          <td>Abbey Road</td>
+          <td>1969</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table id="exercise_8-2">
+        <tr>
+          <th>7:00PM</th>
+          <th>7:30PM</th>
+          <th>8:00PM</th>
+        </tr>
+        <tr>
+          <td colspan="3">The Sunday Night Movie</td>
+        </tr>
+        <tr>
+          <td>Perry Mason</td>
+          <td>Candid Camera</td>
+          <td>What's My Line?</td>
+        </tr>
+        <tr>
+          <td>Bonanza</td>
+          <td colspan="2">The Wackiest Ship in the Army</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table id="exercise_8-3">
+        <tr>
+          <td>Apples</td>
+          <td rowspan="3">Oranges</td>
+          <td>Pears</td>
+        </tr>
+        <tr>
+          <td>Bananas</td>
+          <td rowspan="2">Pineapple</td>
+        </tr>
+        <tr>
+          <td>Lychees</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table id="exercise_8-4">
+        <caption>
+          The Table Challenge
+        </caption>
+        <colgroup></colgroup>
+        <colgroup span="3"></colgroup>
+        <thead>
+          <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">A common header for two subheads</th>
+            <th rowspan="2">Header 3</th>
+          </tr>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Thing A</th>
+            <td>data A1</td>
+            <td>data A2</td>
+            <td>data A3</td>
+          </tr>
+          <tr>
+            <th scope="row">Thing B</th>
+            <td>data B1</td>
+            <td>data B2</td>
+            <td>data B3</td>
+          </tr>
+          <tr>
+            <th scope="row">Thing C</th>
+            <td>data C1</td>
+            <td>data C2</td>
+            <td>data C3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

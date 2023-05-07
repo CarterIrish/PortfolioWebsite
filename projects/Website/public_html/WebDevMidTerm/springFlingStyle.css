@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+.column
+{
+  float: left;
+  width: 40%;
+  padding: 5px;
+}
+
+ .row::after 
+{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.heroBanner
+	{
+		background-image: url(https://cdi09140.classweb.vsc.edu/WebDevMidTerm/images/mountFujiJapan.jpg);
+		height: 424px;
+		width: auto;
+		background-repeat: no-repeat;
+	}
+	
+.bannerText
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-1%, -60%);
+		color: #3E556D;
+		font-size: 150%;
+		line-height: 200%;
+	}
+
+.container
+	{
+		position: relative;
+
+	}
+	
+body{
+		font-family: Georgia, serif;
+		font-size: 100%;
+		line-height: 175%;
+		margin: 0 15% 0;
+		background-color:#e1e1e1;
+	}
+#photoGallary
+{
+	background-image: url(https://cdi09140.classweb.vsc.edu/WebDevMidTerm/images/japaneseCherryBlossom.jpg);
+	background-size: cover;
+}
+.GallaryImage
+{
+	width: 400px;
+	height: auto;
+}
+.button
+	{
+		text-decoration:none;
+		border:2px;
+		background-color: #4CAF50;
+		padding: 25px;
+		border-radius: 50%;
+		transition-duration: .4s;
+	}
+
+.button:hover 
+	{
+		background-color: gray;
+		color: white;
+	}
+
+.disabled
+{
+	opacity: .8;
+	cursor: not-allowed;
+}
