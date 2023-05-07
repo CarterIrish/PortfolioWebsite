@@ -13,18 +13,6 @@ function displayCode(proj)
                 }
 }
 
-function displayWebsites(site)
-    {
-        var elem = document.getElementById("website"+site);
-        if(elem.style.display==="none")
-            {
-                elem.style.display = "block";
-            }
-        else
-            {
-                elem.style.display = "none";
-            }
-    }
 function displayApps(app)
     {
         var elem = document.getElementById("app"+app);

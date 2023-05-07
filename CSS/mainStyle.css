@@ -1,9 +1,9 @@
 
-body, * {
+/* body, * {
     border-color:rgb(0, 255, 170);
     border-style: dotted;
     border-width: .1em;
-}
+} */
 
 body
     {
@@ -54,6 +54,17 @@ iframe
     {
         width:30em;
         height:auto;
+    }  
+dt 
+    {
+        font-size:larger;
+        font-weight:bold;
+    }
+dd, a
+    {
+        font-size:large;
+        font-weight:bold;
+        color:darkslategray;
     }
 .contentContainer
     {
