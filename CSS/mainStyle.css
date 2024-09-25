@@ -38,6 +38,7 @@ nav
 
 .defaultButton:link, .defaultButton:visited
 {
+    display: none; /* Remove when projects are ready to be displayed */
     background-color:transparent;
     color:aliceblue;
     font-weight: bold;
@@ -63,31 +64,6 @@ nav
     transition:.1s; 
     transform: translate(.1vh,.2vh);
 }
- /* button
-    {
-        background-color:transparent;
-        color:aliceblue;
-        font-weight: bold;
-        font-size: large;
-        border-style: inset;
-        border-color: darkslategray;
-        border-width:.2vh;
-        border-radius: 5vh;
-        padding: 1vh;
-        margin:1vh;
-    }
- button:hover
-    {
-        transition: .7s;
-        background-color: rgb(169, 169, 169);
-        scale:1.1;
-    }
- button:active
-    {
-       transition:.1s; 
-       transform: translate(.1vh,.2vh);
-       -ms-transform: translate(.1vh,.2vh);
-    } */
 iframe 
     {
         width:30em;
@@ -123,17 +99,6 @@ dd, a
         color:darkslategray;
 
     }
-
-/* .navBar
-    {
-        display:flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-direction:row;
-        -ms-flex-direction: row;
-    } */
-
 #headshotContainer
     {
         display:flex;
@@ -189,12 +154,6 @@ dd, a
         -ms-flex-direction: row;
         flex-wrap:wrap;
         -ms-flex-wrap: wrap;
-    }
-    .projectButtons
-    {
-        height:fit-content;
-        align-self: center;
-        margin-left: .5%;
     }
 
 
