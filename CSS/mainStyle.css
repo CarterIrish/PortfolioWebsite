@@ -25,7 +25,45 @@ p
         font-size: x-large;
         font-weight: bold;
     }
- button
+
+nav
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    flex: 0, 1, auto;    
+}
+
+.defaultButton:link, .defaultButton:visited
+{
+    background-color:transparent;
+    color:aliceblue;
+    font-weight: bold;
+    font-size: large;
+    border-style: inset;
+    border-color: darkslategray;
+    border-width:.2vh;
+    border-radius: 5vh;
+    padding: 1vh;
+    margin:1vh;
+    text-decoration: none;
+}
+
+.defaultButton:hover
+{
+    transition: .3s;
+    background-color: rgb(169, 169, 169);
+    scale:1.1;
+}
+
+.defaultButton:active
+{
+    transition:.1s; 
+    transform: translate(.1vh,.2vh);
+}
+ /* button
     {
         background-color:transparent;
         color:aliceblue;
@@ -49,7 +87,7 @@ p
        transition:.1s; 
        transform: translate(.1vh,.2vh);
        -ms-transform: translate(.1vh,.2vh);
-    }
+    } */
 iframe 
     {
         width:30em;
@@ -85,7 +123,8 @@ dd, a
         color:darkslategray;
 
     }
-.navBar
+
+/* .navBar
     {
         display:flex;
         justify-content: center;
@@ -93,7 +132,7 @@ dd, a
         -ms-flex-wrap: wrap;
         flex-direction:row;
         -ms-flex-direction: row;
-    }
+    } */
 
 #headshotContainer
     {
