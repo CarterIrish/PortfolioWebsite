@@ -71,22 +71,6 @@ body
     text-align: center;
 }
 
-#projectsContainer, #linksContainer
-{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center;
-    flex: 0, 1, auto;    
-}
-
-#linksContainer > a, #projectsContainer > a
-{
-    width: 6em;
-    text-align: center;    
-}
-
 #mySocials
     {
         display:flex;
