@@ -98,7 +98,7 @@ dd, a
 #headshotContainer
     {
         display:flex;
-        justify-items: center;
+        justify-content: center;
     }
 #headshot
     {
