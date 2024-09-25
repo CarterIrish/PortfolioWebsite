@@ -94,6 +94,7 @@ dd, a
         flex-direction:row;
         -ms-flex-direction: row;
     }
+
 #headshotContainer
     {
         display:flex;
