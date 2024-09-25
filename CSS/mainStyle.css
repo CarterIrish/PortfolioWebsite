@@ -1,15 +1,12 @@
 
-/* body, * {
-    border-color:rgb(0, 255, 170);
-    border-style: dotted;
-    border-width: .1em;
-} */
 
 body
     {
         background-color:black;
         color:aliceblue;
         font-family:'Courier New', Courier, monospace;
+        font-size: x-large;
+        font-weight: bold;
         padding: 4vh;
     }
 
@@ -19,11 +16,6 @@ header
         flex-direction: column;
         justify-content: center ;
         -ms-flex-direction: column;
-    }
-p
-    {
-        font-size: x-large;
-        font-weight: bold;
     }
 
 nav
@@ -92,7 +84,8 @@ dd, a
 
 .sectionHeaders
     {
-        color:darkslategrey;
+        color: darkslategrey;
+        text-align: center;
     }
 .descriptionText
     {

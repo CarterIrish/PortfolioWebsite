@@ -1,0 +1,120 @@
+body
+{
+    background-color: black;
+    color:aliceblue;
+    font-family:'Courier New', Courier, monospace;
+    font-size:larger;
+    font-weight: bold;
+    padding:2rem
+
+}
+
+#pageTitle
+{
+    text-align: center;
+}
+
+#headshotContainer
+{
+    display:flex;
+    justify-content: center;
+}
+
+#headshot
+{
+    min-height:60vh;
+    width:auto;
+}
+
+.defaultButton:link, .defaultButton:visited
+{
+    display:none;
+    background-color:transparent;
+    color:aliceblue;
+    font-weight: bold;
+    font-size: large;
+    border-style: inset;
+    border-color: darkslategray;
+    border-width:.2vh;
+    border-radius: 5vh;
+    padding: 1vh;
+    margin:1vh;
+    text-decoration: none;
+}
+
+
+.defaultButton:hover
+{
+    transition: .3s;
+    background-color: rgb(169, 169, 169);
+    scale:1.1;
+}
+
+.defaultButton:active
+{
+    transition:.1s; 
+    transform: translate(.1vh,.2vh);
+}
+
+.htmlTags
+{
+    margin-left:.5em;
+    margin-right:.5em
+}
+.htmlTags, .sectionHeader
+{
+    color: darkslategray;
+}
+
+.sectionHeader
+{
+    text-align: center;
+}
+
+#projectsContainer, #linksContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    flex: 0, 1, auto;    
+}
+
+#linksContainer > a, #projectsContainer > a
+{
+    width: 6em;
+    text-align: center;    
+}
+
+#mySocials
+    {
+        display:flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        
+    }
+
+.socials
+    {
+        display:flex;
+        flex-direction:column;
+        -ms-flex-direction: column;
+        align-items: center;
+    }
+
+.socialLink
+    {
+        color:aliceblue;
+        width:fit-content;
+        border-radius:.5vh;
+        padding-left: 1vh;
+        padding-right: 1vh;
+
+    }
+.socialLink:hover
+    {
+        background-color: darkgrey;
+        scale: 1.1;
+        transition: .7s;
+    }
