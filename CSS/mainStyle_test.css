@@ -1,7 +1,7 @@
 body
 {
-    background-color: black;
-    color:aliceblue;
+    background-color: white;
+    color:black;
     font-family:'Courier New', Courier, monospace;
     font-size:larger;
     font-weight: bold;
@@ -30,7 +30,7 @@ body
 {
     display:none;
     background-color:transparent;
-    color:aliceblue;
+    color:black;
     font-weight: bold;
     font-size: large;
     border-style: inset;
@@ -63,12 +63,13 @@ body
 }
 .htmlTags, .sectionHeaders
 {
-    color: darkslategray;
+    color: #36bc50;
 }
 
 .sectionHeaders
 {
     text-align: center;
+    color: #36bc50;
 }
 
 #mySocials
@@ -89,7 +90,7 @@ body
 
 .socialLink
     {
-        color:aliceblue;
+        color:#36bc50;
         width:fit-content;
         border-radius:.5vh;
         padding-left: 1vh;
