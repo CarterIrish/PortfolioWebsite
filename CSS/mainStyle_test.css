@@ -73,33 +73,34 @@ body
 }
 
 #mySocials
-    {
-        display:flex;
-        flex-direction: column;
-        -ms-flex-direction: column;
-        
-    }
+{
+    display:flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    
+}
 
 .socials
-    {
-        display:flex;
-        flex-direction:column;
-        -ms-flex-direction: column;
-        align-items: center;
-    }
+{
+    display:flex;
+    flex-direction:column;
+    -ms-flex-direction: column;
+    align-items: center;
+}
 
 .socialLink
-    {
-        color:#36bc50;
-        width:fit-content;
-        border-radius:.5vh;
-        padding-left: 1vh;
-        padding-right: 1vh;
+{
+    color:#36bc50;
+    width:fit-content;
+    border-radius:.5vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
 
-    }
-.socialLink:hover
-    {
-        background-color: darkgrey;
-        scale: 1.1;
-        transition: .7s;
-    }
+a.socialLink:hover
+{
+    background-color: darkgrey;
+    color:#36bc50;
+    scale: 1.1;
+    transition: .7s;
+}
