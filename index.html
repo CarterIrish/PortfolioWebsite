@@ -7,18 +7,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta rel="stylesheet" href="css/mainStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Carter Irish | Game Programmer</title>
     <style>
-
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Open Sans", Arial, sans-serif;
         background-color: #f4f4f4;
         color: #333;
         margin: 0;
         padding: 0;
       }
 
-    
       #wrapper {
         margin: 0;
         padding: 2rem;
@@ -43,11 +45,12 @@
       .subtitle-text {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        font-weight: lighter
+        font-weight: lighter;
       }
+
       .main-header {
         font-size: 2.5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         margin-left: 2.5rem;
         text-align: left;
       }
@@ -55,8 +58,9 @@
       .button-group {
         margin-top: 2rem;
       }
-      
-      .btn-primary, .btn-secondary {
+
+      .btn-primary,
+      .btn-secondary {
         display: inline-block;
         margin: 0.5rem;
         padding: 0.75rem 1.5rem;
@@ -64,16 +68,27 @@
         text-decoration: none;
         font-weight: bold;
         color: rgb(116, 116, 116);
-        border: solid rgb(189, 188, 188)
+        border: solid rgb(189, 188, 188);
+      }
+
+      .about-me-content
+      {
+        display: flex;
+        align-items: flex-start;
+        
       }
     </style>
   </head>
+
   <body>
     <div id="wrapper">
       <nav></nav>
       <section id="hero-banner-section">
         <h1 class="title-text">Carter Irish</h1>
-        <h2 class="subtitle-text">Game Design & Development Student at RIT<br>Focused on Gameplay Programming and Systems Design</h2>
+        <h2 class="subtitle-text">
+          Game Design & Development Student at RIT<br />Focused on Gameplay
+          Programming and Systems Design
+        </h2>
         <div class="button-group">
           <a class="btn-primary" href="#projects-section">Projects &#8595;</a>
           <a class="btn-secondary" href="#about-me-section">About Me &#8595;</a>
@@ -81,10 +96,48 @@
           <a class="btn-secondary" href="#contact-section">Contact &#8595;</a>
         </div>
       </section>
-      <section id="about-me-section"><h1 class="main-header">About Me</h1></section>
-      <section id="projects-section"><h1 class="main-header">Projects</h1></section>
-      <section id="resume-section"><h1 class="main-header">Resume</h1></section>
-      <section id="contact-section"><h1 class="main-header">Get In Touch</h1></section>
+      <section id="about-me-section">
+        <h1 class="main-header">About Me</h1>
+        <div class="about-me-content">
+          <img
+          src="media/photos/carter-and-jack.webp"
+          alt="Profile Picture"
+          style="width: 200px; height: auto; border-radius: 40%; margin: 2.5rem;">
+          <div class="about-me-text">
+          <p>
+            I'm a 3rd-year Game Design & Development student at Rochester
+            Institute of Technology who enjoys building reponsive gameplay systems
+            and game programming. I'm currently exploring Unity and Unreal with a
+            focus on C# but I dabble in C++.
+          </p>
+          <p>
+            Two years as a cook taught me teamwork and time management, skills I
+            bring to game development.
+          </p>
+          <p>
+            I'm passionate about creating engaging gameplay experiences and am
+            eager to contribute to innovative game projects.
+          </p>
+          <p>
+            When I'm not coding, I enjoy watching sports, working out, and playing
+            video games. Feel free to explore my projects and get in touch!
+          </p>
+          <p>
+            Skills: C#, C++, Git, Agile Development, Gameplay Programming, Systems
+            Design
+          </p>
+          </div>
+        </div>
+      </section>
+      <section id="projects-section">
+        <h1 class="main-header">Projects</h1>
+      </section>
+      <section id="resume-section">
+        <h1 class="main-header">Resume</h1>
+      </section>
+      <section id="contact-section">
+        <h1 class="main-header">Get In Touch</h1>
+      </section>
       <footer></footer>
     </div>
   </body>

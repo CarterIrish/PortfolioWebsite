@@ -1,3 +1,56 @@
-#wrapper > * {
-    border: 1px solid #8b8181;
-}
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+    
+      #wrapper {
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      #hero-banner-section {
+        text-align: center;
+        padding: 4rem 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+
+      .title-text {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: bolder;
+      }
+
+      .subtitle-text {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: lighter
+      }
+      .main-header {
+        font-size: 2.5rem;
+        margin-bottom: .5rem;
+        margin-left: 2.5rem;
+        text-align: left;
+      }
+
+      .button-group {
+        margin-top: 2rem;
+      }
+      
+      .btn-primary, .btn-secondary {
+        display: inline-block;
+        margin: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: rgb(116, 116, 116);
+        border: solid rgb(189, 188, 188)
+      }
