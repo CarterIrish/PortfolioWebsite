@@ -22,11 +22,12 @@
       }
 
       #wrapper {
-        margin: 0;
+        margin: 0 auto;
         padding: 2rem;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        max-width: 1538px;
       }
 
       #hero-banner-section {
@@ -71,11 +72,16 @@
         border: solid rgb(189, 188, 188);
       }
 
-      .about-me-content
-      {
+      .about-me-content {
         display: flex;
         align-items: flex-start;
-        
+        flex-wrap: wrap;
+
+      }
+
+      .about-me-text {
+          min-width: 747px;
+          flex: 1;
       }
     </style>
   </head>
@@ -98,34 +104,42 @@
       </section>
       <section id="about-me-section">
         <h1 class="main-header">About Me</h1>
-        <div class="about-me-content">
+        <div class="about-me-content" id="about-me-content">
           <img
-          src="media/photos/carter-and-jack.webp"
-          alt="Profile Picture"
-          style="width: 200px; height: auto; border-radius: 40%; margin: 2.5rem;">
+            id="Headshot"
+            src="media/photos/carter-and-jack.webp"
+            alt="Headshot of Carter Irish"
+            style="
+              width: 200px;
+              height: auto;
+              border-radius: 40%;
+              margin: 2.5rem;
+            "
+          />
           <div class="about-me-text">
-          <p>
-            I'm a 3rd-year Game Design & Development student at Rochester
-            Institute of Technology who enjoys building reponsive gameplay systems
-            and game programming. I'm currently exploring Unity and Unreal with a
-            focus on C# but I dabble in C++.
-          </p>
-          <p>
-            Two years as a cook taught me teamwork and time management, skills I
-            bring to game development.
-          </p>
-          <p>
-            I'm passionate about creating engaging gameplay experiences and am
-            eager to contribute to innovative game projects.
-          </p>
-          <p>
-            When I'm not coding, I enjoy watching sports, working out, and playing
-            video games. Feel free to explore my projects and get in touch!
-          </p>
-          <p>
-            Skills: C#, C++, Git, Agile Development, Gameplay Programming, Systems
-            Design
-          </p>
+            <p>
+              I'm a 3rd-year Game Design & Development student at Rochester
+              Institute of Technology who enjoys building reponsive gameplay
+              systems and game programming. I'm currently exploring Unity and
+              Unreal with a focus on C# but I dabble in C++.
+            </p>
+            <p>
+              Two years as a cook taught me teamwork and time management, skills
+              I bring to game development.
+            </p>
+            <p>
+              I'm passionate about creating engaging gameplay experiences and am
+              eager to contribute to innovative game projects.
+            </p>
+            <p>
+              When I'm not coding, I enjoy watching sports, working out, and
+              playing video games. Feel free to explore my projects and get in
+              touch!
+            </p>
+            <p>
+              Skills: C#, C++, Git, Agile Development, Gameplay Programming,
+              Systems Design
+            </p>
           </div>
         </div>
       </section>
