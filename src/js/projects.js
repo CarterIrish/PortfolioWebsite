@@ -18,5 +18,5 @@ fetch(dataPath)
 
     // Insert projects HTML into the container
     projectsContainer.innerHTML = projectsHtml;
-    
+
   })
