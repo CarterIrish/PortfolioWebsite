@@ -1,18 +1,18 @@
-      body {
-        font-family: Arial, sans-serif;
+body {
+        font-family: "Open Sans", Arial, sans-serif;
         background-color: #f4f4f4;
         color: #333;
         margin: 0;
         padding: 0;
       }
 
-    
       #wrapper {
-        margin: 0;
+        margin: 0 auto;
         padding: 2rem;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        max-width: 1538px;
       }
 
       #hero-banner-section {
@@ -31,11 +31,12 @@
       .subtitle-text {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        font-weight: lighter
+        font-weight: lighter;
       }
+
       .main-header {
         font-size: 2.5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         margin-left: 2.5rem;
         text-align: left;
       }
@@ -43,8 +44,9 @@
       .button-group {
         margin-top: 2rem;
       }
-      
-      .btn-primary, .btn-secondary {
+
+      .btn-primary,
+      .btn-secondary {
         display: inline-block;
         margin: 0.5rem;
         padding: 0.75rem 1.5rem;
@@ -52,5 +54,17 @@
         text-decoration: none;
         font-weight: bold;
         color: rgb(116, 116, 116);
-        border: solid rgb(189, 188, 188)
+        border: solid rgb(189, 188, 188);
+      }
+
+      .about-me-content {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+      }
+
+      .about-me-text {
+          min-width: 747px;
+          flex: 1;
       }
