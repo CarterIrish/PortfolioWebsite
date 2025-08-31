@@ -4,5 +4,12 @@
         "description": "Play as our rogue protagonist, and protect your safe from the taxmen coming to take it from you!",
         "image": "src/assets/images/youve-been-audited-title.png",
         "link": "https://milkdiverdev.itch.io/youve-been-audited"
+    },
+    
+    {
+        "Title": "New Project",
+        "description": "Description of the new project.",
+        "image": "src/assets/images/new-project-title.png",
+        "link": "https://milkdiverdev.itch.io/new-project"
     }
 ]

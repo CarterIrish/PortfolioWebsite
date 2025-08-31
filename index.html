@@ -19,6 +19,7 @@
         color: #333;
         margin: 0;
         padding: 0;
+        align-items: center;
       }
 
       #wrapper {
@@ -51,7 +52,7 @@
 
       .main-header {
         font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         margin-left: 2.5rem;
         text-align: left;
       }
@@ -83,6 +84,47 @@
           min-width: 747px;
           flex: 1;
       }
+
+      #projects-container
+      {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .project-image
+      {
+        width: 100%;
+        max-width: 350px; /* or whatever max size you prefer */
+        height: auto;     /* maintains aspect ratio */
+        display: block;
+        border-radius: 1rem;
+      }
+      .project-card
+      {
+        border: solid thin rgb(95, 5, 5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+        min-width: 400px;
+      }
+
+      @media (max-width: 800px) {
+  .about-me-text {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+  }
+  .about-me-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
     </style>
   </head>
 
