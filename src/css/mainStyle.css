@@ -1,204 +1,286 @@
-body {
-  font-family: "Open Sans", Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
+    body {
+      font-family: "Open Sans", Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
 
-#wrapper {
-  margin: 0 auto;
-  padding: 2rem;
+    #wrapper {
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      max-width: 1538px;
+    }
+
+    #hero-banner-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .title-text {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: bolder;
+    }
+
+    .subtitle-text {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: lighter;
+    }
+
+    .main-header {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      margin-left: 2.5rem;
+      text-align: left;
+    }
+
+    .button-group {
+      margin-top: 2rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: rgb(116, 116, 116);
+      border: solid rgb(189, 188, 188);
+    }
+
+    .about-me-content {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 2.5rem;
+    }
+
+    .about-me-text {
+      min-width: 747px;
+      flex: 1;
+    }
+
+    #projects-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 350px;
+      /* or whatever max size you prefer */
+      height: auto;
+      /* maintains aspect ratio */
+      display: block;
+      border-radius: 1rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      min-width: 400px;
+    }
+
+    @media (max-width: 800px) {
+      .about-me-text {
+        min-width: 0;
+        width: 100%;
+        margin: 0;
+      }
+
+      .about-me-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .project-info {
+      text-align: center;
+    }
+
+    .project-link {
+      font-weight: 500;
+      color: black;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .project-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: black;
+      transition: width 0.2s ease;
+    }
+
+    .project-link:hover::after {
+      width: 100%;
+    }
+
+    /* Contact Section */
+    #contact-section {
+      max-width: 600px;
+    }
+
+    .contact-container {
+      margin: 2.5rem;
+    }
+
+    .contact-intro {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-input {
+      padding: 0.75rem;
+      border: none;
+      border-bottom: 1px solid #333;
+      background: transparent;
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 1rem;
+    }
+
+    .contact-textarea {
+      padding: 0.75rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: transparent;
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .btn-contact {
+      align-self: flex-start;
+      padding: 0.75rem 1.5rem;
+      border-radius: 1rem;
+      border: solid #333;
+      background: white;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: "Open Sans", Arial, sans-serif;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-contact:hover {
+      background: #333;
+      color: white;
+    }
+
+    .contact-alternative {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      /* subtle white overlay */
+      backdrop-filter: blur(6px);
+      /* nice modern blur effect */
+      border-bottom: 1px solid #ddd;
+      /* keeps the divider line */
+    }
+
+
+    .navbar-brand,
+    .nav-link {
+      color: #333 !important;
+      font-weight: 600;
+    }
+
+
+    .nav-link:hover {
+      color: #000 !important;
+    }
+
+    .navbar-light .navbar-toggler {
+      border: none;
+      /* cleaner hamburger icon */
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+      /* remove blue glow on click */
+    }
+
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      transition: background 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: #f4f4f4;
+      /* subtle hover */
+    }
+
+    .navbar {
+      padding: 0.5rem 1rem;
+    }
+
+    .resume-overview {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  max-width: 1538px;
-}
-
-#hero-banner-section {
-  text-align: center;
-  padding: 4rem 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-}
-
-.title-text {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-weight: bolder;
-}
-
-.subtitle-text {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: lighter;
-}
-
-.main-header {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  margin-left: 2.5rem;
-  text-align: left;
-}
-
-.button-group {
-  margin-top: 2rem;
-}
-
-.btn-primary,
-.btn-secondary {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  color: rgb(116, 116, 116);
-  border: solid rgb(189, 188, 188);
-}
-
-.about-me-content {
-  display: flex;
-  align-items: flex-start;
   flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
   margin: 2.5rem;
 }
 
-.about-me-text {
-  min-width: 747px;
-  flex: 1;
-}
-
-#projects-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.project-image {
-  width: 100%;
-  max-width: 350px;
-  /* or whatever max size you prefer */
-  height: auto;
-  /* maintains aspect ratio */
-  display: block;
-  border-radius: 1rem;
-}
-
-.project-card {
+.resume-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  min-width: 400px;
+  flex: 1 1 300px;
+  max-width: 350px;
 }
 
-@media (max-width: 800px) {
-  .about-me-text {
-    min-width: 0;
-    width: 100%;
-    margin: 0;
-  }
-
-  .about-me-content {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.project-info {
-  text-align: center;
-}
-
-.project-link {
-  font-weight: 500;
-  color: black;
-  text-decoration: none;
-  position: relative;
-}
-
-.project-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 2px;
-  background: black;
-  transition: width 0.2s ease;
-}
-
-.project-link:hover::after {
-  width: 100%;
-}
-
-/* Contact Section */
-#contact-section {
-  max-width: 600px;
-}
-
-.contact-container {
-  margin: 2.5rem;
-}
-
-.contact-intro {
-  font-size: 1.2rem;
+.resume-card h3 {
   margin-bottom: 1rem;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-input {
-  padding: 0.75rem;
-  border: none;
-  border-bottom: 1px solid #333;
-  background: transparent;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 1rem;
-}
-
-.contact-textarea {
-  padding: 0.75rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  background: transparent;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-size: 1rem;
-  resize: vertical;
-}
-
-.btn-contact {
-  align-self: flex-start;
-  padding: 0.75rem 1.5rem;
-  border-radius: 1rem;
-  border: solid #333;
-  background: white;
+  font-size: 1.25rem;
   color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: "Open Sans", Arial, sans-serif;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.btn-contact:hover {
-  background: #333;
-  color: white;
+.resume-card ul {
+  list-style: none;
+  padding: 0;
 }
 
-.contact-alternative {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+.resume-card li {
+  margin-bottom: 0.5rem;
   color: #555;
 }
+
+
+  </style>
