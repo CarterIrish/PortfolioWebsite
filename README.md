@@ -1,7 +1,7 @@
 # Carter Irish Portfolio Website
 
 ### Author: Carter Irish  
-### Date: 05/19/2024
+### Date: 09/02/2025
 
 ## Overview
 This portfolio website serves as a living record of Carter Irish's projects and professional journey as a Game Programmer. It is designed to showcase skills, experience, and contact information for future opportunities.
@@ -28,10 +28,10 @@ This portfolio website serves as a living record of Carter Irish's projects and 
   Includes a headshot and a summary of Carter's education, experience, skills, and interests. The layout is responsive, displaying the image and text side by side on large screens and stacking them on smaller screens.
 
 - **Projects:**  
-  Section reserved for showcasing game development and programming projects.
+  Dynamically displays game development and programming projects by loading project data from a JSON file using JavaScript. Each project card includes an image, title, description, and link.
 
 - **Resume:**  
-  Section for professional experience, education, and relevant skills.
+  Section for professional experience, education, and relevant skills. Includes a downloadable PDF resume.
 
 - **Contact:**  
   Provides a way for visitors to get in touch.
@@ -42,15 +42,20 @@ This portfolio website serves as a living record of Carter Irish's projects and 
 ## Technologies
 - **HTML5 & CSS3:**  
   Semantic markup and modern styling, including Flexbox for responsive layouts.
+- **JavaScript:**  
+  Dynamically loads and renders project cards from a JSON data file.
 - **Google Fonts:**  
   Uses "Open Sans" for a clean, professional look.
 - **Responsive Design:**  
   Ensures usability across devices with flexible layouts and media queries.
+- **WebP and PNG Images:**  
+  Uses modern image formats for performance and compatibility.
 
 ## Usage
 - Navigate using the buttons in the hero banner or scroll through each section.
-- Contact information is available for professional inquiries.
+- View dynamically loaded project cards in the Projects section.
+- Download the resume or contact Carter Irish for professional inquiries.
 
 ---
 
-This documentation provides a high-level summary of the portfolio's purpose, goals,
+This documentation provides a high-level summary of the portfolio's purpose, goals, structure, and technical
