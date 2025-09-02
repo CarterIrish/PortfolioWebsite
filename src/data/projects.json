@@ -7,9 +7,30 @@
     },
     
     {
-        "Title": "New Project",
-        "description": "Description of the new project.",
-        "image": "src/assets/images/new-project-title.png",
-        "link": "https://milkdiverdev.itch.io/new-project"
+        "Title": "RecAnime",
+        "description": "A class project that works with API's to get anime recomendations",
+        "image": "src/assets/images/RecAnimeHomepage.png",
+        "link": "https://people.rit.edu/cdi9919/235/src/projects/project2/landing.html"
+    },
+
+    {
+        "Title": "Scramble",
+        "description": "A simple word guessing game",
+        "image": "src/assets/images/ScrambleLandingPage.png",
+        "link": "https://people.rit.edu/cdi9919/235/src/projects/project3/index.html"
+    },
+
+    {
+        "Title": "Crazy Taxi",
+        "description": "A Unity experiement utilizing multiple different gameplay mechanics.",
+        "image": "src/assets/images/CrazyTaxi.png",
+        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_03/"
+    },
+
+    {
+        "Title": "Simple Fruit",
+        "description": "A simple fruit collection game.",
+        "image": "src/assets/images/SimpleFruit.png",
+        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_02/"
     }
 ]
