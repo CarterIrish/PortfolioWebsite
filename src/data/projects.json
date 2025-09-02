@@ -22,14 +22,14 @@
 
     {
         "Title": "Crazy Taxi",
-        "description": "A Unity experiement utilizing multiple different gameplay mechanics.",
+        "description": "A Unity experiement utilizing multiple different gameplay mechanics",
         "image": "src/assets/images/CrazyTaxi.png",
         "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_03/"
     },
 
     {
-        "Title": "Simple Fruit",
-        "description": "A simple fruit collection game.",
+        "Title": "Simple Fruit Ninja",
+        "description": "A simple fruit ninja game",
         "image": "src/assets/images/SimpleFruit.png",
         "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_02/"
     }
