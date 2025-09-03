@@ -80,7 +80,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      /* gap: 2rem; */
     }
 
     .project-image {
@@ -98,11 +98,12 @@
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
+      margin: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       max-width: 400px;
-      min-width: 400px;
+      min-width: 250px;
     }
 
     @media (max-width: 800px) {
