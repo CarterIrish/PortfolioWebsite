@@ -32,5 +32,11 @@
         "description": "A simple fruit ninja game",
         "image": "src/assets/images/SimpleFruit.png",
         "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_02/"
+    },
+    {
+        "Title": "Spotify Widget",
+        "description": "A simple Spotify widget, utilizing the Spotify API. Work in progress.",
+        "image": "src/assets/images/2024-spotify-full-logo/Full_Logo_Green_CMYK.svg",
+        "link": "https://carterirish.net"
     }
 ]
