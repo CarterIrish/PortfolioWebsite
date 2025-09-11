@@ -36,7 +36,7 @@
     {
         "Title": "Spotify Widget",
         "description": "A simple Spotify widget, utilizing the Spotify API. Work in progress.",
-        "image": "src/assets/images/2024-spotify-full-logo/Full_Logo_Green_CMYK.svg",
+        "image": "src/assets/images/Spotify_Full_Logo_RGB_Green.png",
         "link": "https://github.com/CarterIrish/spotify-widget"
     }
 ]
