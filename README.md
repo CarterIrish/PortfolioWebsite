@@ -49,8 +49,10 @@ This portfolio website is a living record of Carter Irish's projects and profess
   Ensures usability across devices with flexible layouts and media queries.
 - **WebP and PNG Images:**  
   Uses modern image formats for performance and compatibility.
-- **Jasmine (Testing):**  
-  Basic Jasmine setup for future JavaScript testing.
+
+## Hosting
+- **Cloudflare:**  
+  Uses Cloudflare Domain Name Servers and caching to serve the webpage faster.
 
 ## Usage
 - Navigate using the hero banner buttons or scroll through each section.
