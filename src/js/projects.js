@@ -37,7 +37,7 @@ function populateProjectsContainer() {
 
 async function fetchFromWorker() {
   const response = await fetch('https://spotify-widget.2023c-irish.workers.dev',
-     { method: 'GET', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ 'name': 'Carter Irish' }) });
+     { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ 'name': 'Carter Irish' }) });
   const data = await response.json();
   console.log(data);
 };
