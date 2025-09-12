@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   populateProjectsContainer();
 
   // Query the cloudflare worker
-  document.querySelector('.spotify-widget').addEventListener('click', async () => {
+  document.querySelector('#test-widget-btn').addEventListener('click', async () => {
     await fetchFromWorker();
   });
 });
