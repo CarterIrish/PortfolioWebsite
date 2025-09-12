@@ -1,5 +1,13 @@
 const dataPath = './src/data/projects.json';
 
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('#test-widget-btn').addEventListener('click', async () => {
+      const res = await fetch("https://spotify-widget.2023c-irish.workers.dev");
+      const data = await res.json();
+      console.log(data); // song info
+
+  });
+});
 // Fetch and display projects from the JSON file
 fetch(dataPath)
   .then(response => response.json())

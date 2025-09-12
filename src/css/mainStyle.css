@@ -65,6 +65,7 @@ body {
 
 .about-me-content {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
   margin: 2.5rem;
@@ -73,6 +74,19 @@ body {
 .about-me-text {
   min-width: 747px;
   flex: 1;
+}
+
+@media (max-width: 800px) {
+  .about-me-text {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .about-me-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 #projects-container {
@@ -103,19 +117,6 @@ body {
   align-items: center;
   max-width: 400px;
   min-width: 250px;
-}
-
-@media (max-width: 800px) {
-  .about-me-text {
-    min-width: 0;
-    width: 100%;
-    margin: 0;
-  }
-
-  .about-me-content {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .project-info {
@@ -286,12 +287,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:0.5rem;
+  gap: 0.5rem;
 }
 
-.footer-logos{
-  display:flex;
-  gap:1.5rem;
+.footer-logos {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .footer-logos img {
@@ -305,10 +306,15 @@ body {
   opacity: 0.7;
 }
 
-.footer-copyright
-{
+.footer-copyright {
   font-size: 0.94rem;
   color: #888;
-  margin-top:0.5rem;
-  text-align:center;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.spotify-widget {
+  width: 300px;
+  height: auto;
+  background-color: slategray;
 }
