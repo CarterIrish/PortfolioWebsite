@@ -313,6 +313,10 @@ body {
   text-align: center;
 }
 
+
+.spotify-widget-container{
+  display:none;
+}
 #spotify-authentication-btn{
     background-color: #1ed760;
     border: none;
