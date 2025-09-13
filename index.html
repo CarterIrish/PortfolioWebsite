@@ -86,7 +86,7 @@
             playing video games. Feel free to explore my projects and get in
             touch!
           </p>
-
+          
         </div>
       </div>
     </section>
@@ -158,10 +158,23 @@
 
       <footer>
         <div class="footer-content">
+          <div class="spotify-widget-container">
+            <div class="spotify-widget" id="spotify-widget">
+              <img src="" alt="Album Art" id="album-art" />
+              <div class="track-info">
+                <div id="track-name">Track Name</div>
+                <div id="artist-name">Artist Name</div>
+              </div>
+            </div>
+            <button id="spotify-authentication-btn" class="btn-contact">Authenticate Spotify</button>
+          </div>
           <div class="footer-logos">
-            <a href="https://github.com/CarterIrish" target="_blank"><img src="src/assets/images/github-mark.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/carter-irish/" target="_blank"><img src="src/assets/images/InBug-Black.png" alt="LinkedIn"></a>
-            <a href="https://x.com/Carter41137975" target="_blank"><img src="src/assets/images/logo-black.png" alt="X"></a>
+            <a href="https://github.com/CarterIrish" target="_blank"><img src="src/assets/images/github-mark.png"
+                alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/carter-irish/" target="_blank"><img
+                src="src/assets/images/InBug-Black.png" alt="LinkedIn"></a>
+            <a href="https://x.com/Carter41137975" target="_blank"><img src="src/assets/images/logo-black.png"
+                alt="X"></a>
           </div>
           <div class="footer-copyright">© 2024 Carter Irish. All rights reserved.</div>
         </div>
@@ -169,6 +182,7 @@
   </div>
 
   <script src="src/js/projects.js"></script>
+  <script src="src/js/spotify/auth.js"></script>
 </body>
 
 </html>

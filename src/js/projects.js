@@ -4,11 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Fetch and display projects from the JSON file
   populateProjectsContainer();
-
-  // Query the cloudflare worker
-  document.querySelector('#test-widget-btn').addEventListener('click', async () => {
-    await fetchFromWorker();
-  });
 });
 
 function populateProjectsContainer() {
@@ -35,8 +30,10 @@ function populateProjectsContainer() {
     });
 }
 
-async function fetchFromWorker() {
-  const response = await fetch('https://spotify-widget.2023c-irish.workers.dev?message=Hello%20Backend', { method: 'GET' });
-  const data = await response.json();
-  console.log(data);
-};
+
+
+// async function fetchFromWorker() {
+//   const response = await fetch('https://spotify-widget.2023c-irish.workers.dev?message=Hello%20Backend', { method: 'GET' });
+//   const data = await response.json();
+//   console.log(data);
+// };

@@ -8,3 +8,6 @@ Thumbs.db
 
 # Logs (just in case)
 *.log
+
+// Local environment variables
+.dev.vars
