@@ -209,7 +209,7 @@ body {
 .navbar {
   background: rgba(255, 255, 255, 0.9);
   /* subtle white overlay */
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(1px);
   /* nice modern blur effect */
   border-bottom: 1px solid #ddd;
   /* keeps the divider line */
@@ -313,7 +313,7 @@ body {
   text-align: center;
 }
 
-
+/* This should only be hidden during development when pushed to production */
 .spotify-widget-container{
   display:none;
 }
