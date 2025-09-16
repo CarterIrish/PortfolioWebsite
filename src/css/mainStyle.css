@@ -313,10 +313,9 @@ body {
   text-align: center;
 }
 
-/* This should only be hidden during development when pushed to production */
-.spotify-widget-container{
+/* .spotify-widget-container{
   display:none;
-}
+} */
 #spotify-authentication-btn{
     background-color: #1ed760;
     border: none;

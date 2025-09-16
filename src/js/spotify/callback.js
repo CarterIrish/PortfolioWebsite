@@ -1,11 +1,14 @@
-console.log("callback.js loaded");
-console.log("window.location.search:", window.location.search);
 
-const params = new URLSearchParams(window.location.search);
-const code = params.get('code');
-const codeVerifier = sessionStorage.getItem('spotify_code_verifier');
+// Upon redirect from Spotify auth, exchange code for tokens via Worker endpoint
+
+// Build the request to the Worker endpoint
+const params = new URLSearchParams(window.location.search); // get query params from URL
+const code = params.get('code'); // extract the authorization code
+const codeVerifier = sessionStorage.getItem('spotify_code_verifier'); // retrieve the code verifier from session storage
+// Log for debugging
 console.log("code:", code, "codeVerifier:", codeVerifier);
 
+// Make the POST request to the Worker endpoint
 fetch('https://spotify-widget.2023c-irish.workers.dev/auth',
     {
         method: 'POST',
@@ -16,5 +19,8 @@ fetch('https://spotify-widget.2023c-irish.workers.dev/auth',
     .then(data => {
         console.log("Worker response:", data);
         sessionStorage.setItem('spotify_access_token', data.access_token);
+        localStorage.setItem('spotify_user_id', data.user_id);
+        // Redirect to home or another page after successful authentication
+        window.location.href = '/';
     })
     .catch(err => console.error("Fetch error:", err));
