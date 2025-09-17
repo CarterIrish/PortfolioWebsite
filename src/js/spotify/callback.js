@@ -8,8 +8,7 @@ const codeVerifier = sessionStorage.getItem('spotify_code_verifier'); // retriev
 // Log for debugging
 console.log("code:", code, "codeVerifier:", codeVerifier);
 
-// Make the POST request to the Worker endpoint
-fetch('https://spotify-widget.2023c-irish.workers.dev/auth',
+fetch('http://127.0.0.1:8787/auth',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

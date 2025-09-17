@@ -37,7 +37,7 @@ async function spotifyAuthenticate() {
 
     // Construct the redirect URL Params
     const clientId = "419ae3c6913946ffa0940c1ae6c08847"; // Safe to expose
-    const redirectUri = new URL("https://carterirish.net/callback"); // Safe to expose
+    const redirectUri = new URL("http://127.0.0.1:5500/callback"); // Safe to expose
     const scope = "user-read-currently-playing user-read-playback-state user-read-email user-read-private";
     const authUrl = new URL("https://accounts.spotify.com/authorize");
     // Build the full URL
