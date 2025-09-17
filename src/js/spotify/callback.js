@@ -19,6 +19,7 @@ fetch('http://127.0.0.1:8787/auth',
         console.log("Worker response:", data);
         sessionStorage.setItem('spotify_access_token', data.access_token);
         localStorage.setItem('spotify_user_id', data.user_id);
+        console.log(`${data.user_id} tokens stored.`);
         // Redirect to home or another page after successful authentication
         window.location.href = '/';
     })
