@@ -17,7 +17,10 @@ fetch('http://127.0.0.1:8787/auth',
     .then(res => res.json())
     .then(data => {
         console.log("Worker response:", data);
+        let expiresIn = data.expires_in; // seconds from Spotify
+        let expiresAt = Date.now() + expiresIn * 1000;
         sessionStorage.setItem('spotify_access_token', data.access_token);
+        sessionStorage.setItem('spotify_access_token_expires_at', expiresAt);
         localStorage.setItem('spotify_user_id', data.user_id);
         console.log(`${data.user_id} tokens stored.`);
         // Redirect to home or another page after successful authentication
