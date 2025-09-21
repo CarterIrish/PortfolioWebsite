@@ -24,6 +24,6 @@ fetch('https://spotify-widget.2023c-irish.workers.dev/auth',
         localStorage.setItem('spotify_user_id', data.user_id);
         console.log(`${data.user_id} tokens stored.`);
         // Redirect to home or another page after successful authentication
-        window.location.href = 'https://lab.carterirish.net/index.html';
+        window.location.href = 'https://lab.carterirish.net/portfolio/index.html';
     })
     .catch(err => console.error("Fetch error:", err));
