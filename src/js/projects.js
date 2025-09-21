@@ -29,11 +29,3 @@ function populateProjectsContainer() {
 
     });
 }
-
-
-
-// async function fetchFromWorker() {
-//   const response = await fetch('https://spotify-widget.2023c-irish.workers.dev?message=Hello%20Backend', { method: 'GET' });
-//   const data = await response.json();
-//   console.log(data);
-// };
