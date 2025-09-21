@@ -51,6 +51,7 @@ async function spotifyAuthenticate() {
     }
     // redirect to Spotify authorization URL
     authUrl.search = new URLSearchParams(params).toString();
+    console.log('OAuth URL:', authUrl.toString());
     window.location.href = authUrl.toString();
 }
 
