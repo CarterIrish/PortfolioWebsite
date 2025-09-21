@@ -8,7 +8,7 @@ const codeVerifier = sessionStorage.getItem('spotify_code_verifier'); // retriev
 // Log for debugging
 console.log("code:", code, "codeVerifier:", codeVerifier);
 
-fetch('http://127.0.0.1:8787/auth',
+fetch('https://spotify-widget.2023c-irish.workers.dev/auth',
     {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -50,7 +50,7 @@ class SpotifyWidget {
         const userId = localStorage.getItem('spotify_user_id');
         console.log('Tokens:', { accessToken, userId }); // Add this too
         // TODO(human): Make POST request to worker endpoint '/currently-playing'
-        fetch('http://127.0.0.1:8787/currently-playing',
+        fetch('https://spotify-widget.2023c-irish.workers.dev/currently-playing',
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
