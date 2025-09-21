@@ -320,11 +320,11 @@ body {
 
 /* Hide Spotify widget by default - JavaScript will show it when enabled */
 .spotify-widget-container {
-  display: none;
+  display: none !important;
 }
 
-.js-enabled .spotify-widget-container {
-  display: block;
+body.js-enabled .spotify-widget-container {
+  display: block !important;
 }
 
 #spotify-authentication-btn{
