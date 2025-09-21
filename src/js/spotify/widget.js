@@ -127,5 +127,7 @@ class SpotifyWidget {
 
 // Initialize widget when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Add class to indicate JavaScript is enabled
+    document.body.classList.add('js-enabled');
     new SpotifyWidget();
 });

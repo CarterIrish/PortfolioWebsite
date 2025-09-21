@@ -317,6 +317,16 @@ body {
 /* .spotify-widget-container{
   display:none;
 } */
+
+/* Hide Spotify widget by default - JavaScript will show it when enabled */
+.spotify-widget-container {
+  display: none;
+}
+
+.js-enabled .spotify-widget-container {
+  display: block;
+}
+
 #spotify-authentication-btn{
     background-color: #1ed760;
     border: none;
