@@ -91,9 +91,9 @@ class SpotifyWidget {
         // Fetch immediately
         this.fetchCurrentlyPlaying();
 
-        // TODO(human): Set up interval to refresh every 30 seconds
+        // TODO(human): Set up interval to refresh every 10 seconds
         // Store in this.refreshInterval so it can be cleared later
-        this.refreshInterval = setInterval(() => this.fetchCurrentlyPlaying(), 30000);
+        this.refreshInterval = setInterval(() => this.fetchCurrentlyPlaying(), 10000);
     }
 
     stopRefreshing() {
