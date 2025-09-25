@@ -48,7 +48,7 @@ class SpotifyWidget {
         const accessToken = sessionStorage.getItem('spotify_access_token');
         // TODO(human): Get user_id from localStorage
         const userId = localStorage.getItem('spotify_user_id');
-        console.log('Tokens:', { accessToken, userId }); // Add this too
+        //console.log('Tokens:', { accessToken, userId }); // Add this too
         // TODO(human): Make POST request to worker endpoint '/currently-playing'
         fetch('https://spotify-widget.2023c-irish.workers.dev/currently-playing',
             {
@@ -81,6 +81,7 @@ class SpotifyWidget {
             this.widget.style.display = 'none';
             return;
         }
+        console.log('Updating widget with track data:', trackData);
         this.albumArt.src = trackData.track.image;
         this.trackName.textContent = trackData.track.name;
         this.artistName.textContent = trackData.track.artist;
