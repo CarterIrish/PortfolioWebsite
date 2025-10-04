@@ -41,37 +41,36 @@ class SpotifyWidget {
         }
     }
 
-    // TODO(human): Implement fetchCurrentlyPlaying
     async fetchCurrentlyPlaying() {
         console.log("Fetching currently playing track...");
-        // TODO(human): Get access_token from sessionStorage
         const accessToken = sessionStorage.getItem('spotify_access_token');
-        // TODO(human): Get user_id from localStorage
         const userId = localStorage.getItem('spotify_user_id');
-        //console.log('Tokens:', { accessToken, userId }); // Add this too
-        // TODO(human): Make POST request to worker endpoint '/currently-playing'
-        fetch('https://spotify-widget.2023c-irish.workers.dev/currently-playing',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ access_token: accessToken, user_id: userId })
+
+        try {
+            const response = await fetch('https://spotify-widget.2023c-irish.workers.dev/currently-playing',
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ access_token: accessToken, user_id: userId })
+                }
+            );
+
+            const data = await response.json();
+
+            if (data.success) {
+                if (data.new_access_token) {
+                    sessionStorage.setItem('spotify_access_token', data.new_access_token);
+                }
+                this.updateWidget(data);
+            } else {
+                // API returned an error response
+                this.handleError(data);
             }
-        )
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    if (data.new_access_token) {
-                        sessionStorage.setItem('spotify_access_token', data.new_access_token);
-                    }
-                    this.updateWidget(data);
-                }
-                else {
-                    this.handleError(data)
-                }
-            }).catch
-            (error => {
-                this.handleError(error);
-            });
+        } catch (error) {
+            // Network error or JSON parsing failed
+            console.error('Network error fetching currently playing:', error);
+            this.handleError({ code: 'NETWORK_ERROR', message: error.message });
+        }
     }
 
     // TODO(human): Implement updateWidget
@@ -91,7 +90,7 @@ class SpotifyWidget {
     startRefreshing() {
         // Fetch immediately
         this.fetchCurrentlyPlaying();
-
+I
         // TODO(human): Set up interval to refresh every 10 seconds
         // Store in this.refreshInterval so it can be cleared later
         this.refreshInterval = setInterval(() => this.fetchCurrentlyPlaying(), 10000);
