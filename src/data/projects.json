@@ -38,5 +38,11 @@
         "description": "A simple Spotify widget, utilizing the Spotify API. Work in progress.",
         "image": "src/assets/images/Spotify_Full_Logo_RGB_Green.png",
         "link": "https://github.com/CarterIrish/spotify-widget"
+    },
+    {
+        "Title": "Rat Runner", 
+        "description": "A survival horror game about a rat exploring dangerous sewers, gathering resources, and upgrading its abilities to escape.",
+        "image": "src/assets/images/ratrunner.png",
+        "link": "https://lab.carterirish.net/coursework/RatRunner/"
     }
 ]
