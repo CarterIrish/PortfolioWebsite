@@ -19,7 +19,7 @@ function populateProjectsContainer() {
         <div class="project-info">
           <h2 class="project-title">${project.Title}</h2>
           <p class="project-description">${project.description}</p>
-          <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+          ${project.link !== "none" ? `<a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>` : ''}
         </div>
       </div>
     `).join('');

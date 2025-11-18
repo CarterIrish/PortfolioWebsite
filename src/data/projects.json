@@ -1,9 +1,41 @@
 [
     {
+        "Title": "Blackhole Simulation",
+        "description":"Simulation of a blackhole using OpenGL and C++",
+        "image":"src/assets/images/blackhole.jpg",
+        "link":"none"
+    },
+    {
+        "Title": "Rat Runner", 
+        "description": "A survival horror game about a rat exploring dangerous sewers, gathering resources, and upgrading its abilities to escape.",
+        "image": "src/assets/images/RatRunnerTitle.png",
+        "link": "https://lab.carterirish.net/coursework/RatRunner/"
+    }
+    ,
+    {
         "Title": "You've Been Audited",
         "description": "Play as our rogue protagonist, and protect your safe from the taxmen coming to take it from you!",
         "image": "src/assets/images/youve-been-audited-title.png",
         "link": "https://milkdiverdev.itch.io/youve-been-audited"
+    },
+    {
+        "Title": "Spotify Widget",
+        "description": "A simple Spotify widget, utilizing the Spotify API. Work in progress.",
+        "image": "src/assets/images/Spotify_Full_Logo_RGB_Green.png",
+        "link": "https://github.com/CarterIrish/spotify-widget"
+    },
+    {
+        "Title": "Crazy Taxi",
+        "description": "A Unity experiement utilizing multiple different gameplay mechanics",
+        "image": "src/assets/images/CrazyTaxi.png",
+        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_03/"
+    },
+
+    {
+        "Title": "Simple Fruit Ninja",
+        "description": "A simple fruit ninja game",
+        "image": "src/assets/images/SimpleFruit.png",
+        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_02/"
     },
     
     {
@@ -18,31 +50,5 @@
         "description": "A simple word guessing game",
         "image": "src/assets/images/ScrambleLandingPage.png",
         "link": "https://people.rit.edu/cdi9919/235/src/projects/project3/index.html"
-    },
-
-    {
-        "Title": "Crazy Taxi",
-        "description": "A Unity experiement utilizing multiple different gameplay mechanics",
-        "image": "src/assets/images/CrazyTaxi.png",
-        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_03/"
-    },
-
-    {
-        "Title": "Simple Fruit Ninja",
-        "description": "A simple fruit ninja game",
-        "image": "src/assets/images/SimpleFruit.png",
-        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_02/"
-    },
-    {
-        "Title": "Spotify Widget",
-        "description": "A simple Spotify widget, utilizing the Spotify API. Work in progress.",
-        "image": "src/assets/images/Spotify_Full_Logo_RGB_Green.png",
-        "link": "https://github.com/CarterIrish/spotify-widget"
-    },
-    {
-        "Title": "Rat Runner", 
-        "description": "A survival horror game about a rat exploring dangerous sewers, gathering resources, and upgrading its abilities to escape.",
-        "image": "src/assets/images/ratrunner.png",
-        "link": "https://lab.carterirish.net/coursework/RatRunner/"
     }
 ]
