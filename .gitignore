@@ -11,3 +11,6 @@ Thumbs.db
 
 // Local environment variables
 .dev.vars
+
+// Node Modules
+node_modules/

@@ -1,0 +1,27 @@
+{
+  "name": "portfoliowebsite2024",
+  "version": "1.0.0",
+  "description": "This portfolio website is a living record of Carter Irish's projects and professional journey as a Game Programmer. It showcases skills, experience, and contact information for future opportunities.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarterIrish/PortfolioWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarterIrish/PortfolioWebsite/issues"
+  },
+  "homepage": "https://github.com/CarterIrish/PortfolioWebsite#readme",
+  "devDependencies": {
+    "vite": "^7.2.2"
+  }
+}
