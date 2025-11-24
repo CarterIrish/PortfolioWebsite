@@ -15,6 +15,7 @@ function populateProjectsContainer() {
       // Create HTML for each project
       const projectsHtml = data.map(project => `
       <div class="project-card">
+        ${project.status ? `<span class="project-tag ${project.status.toLowerCase().replace(/\s+/g, '-')}">${project.status}</span>` : ''}
         <img src="${project.image}" alt="${project.Title}" class="project-image"/>
         <div class="project-info">
           <h2 class="project-title">${project.Title}</h2>
