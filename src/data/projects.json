@@ -1,55 +1,50 @@
 [
     {
-        "Title": "Blackhole Simulation",
-        "description":"Simulation of a blackhole using OpenGL and C++",
-        "image":"src/assets/images/blackhole.jpg",
-        "link":"none",
-        "status": "In Development"
+        "Title": "Rat Runner",
+        "description": "A survival horror game set in a maze of sewers. I built the NavMesh enemy AI and pursuit behavior, binary-serialized save/load, the inventory and door-key systems, and the game state machine. Five-person team.",
+        "image": "src/assets/images/RatRunnerTitle.webp",
+        "link": "https://lab.carterirish.net/RatRunner/",
+        "status": "Completed",
+        "tech": ["Unity", "C#", "NavMesh"]
     },
     {
-        "Title": "Rat Runner",
-        "description": "A survival horror game about a rat exploring dangerous sewers, gathering resources, and upgrading its abilities to escape.",
-        "image": "src/assets/images/RatRunnerTitle.png",
-        "link": "https://lab.carterirish.net/RatRunner/",
-        "status": "Completed"
-    }
-    ,
+        "Title": "Vigil",
+        "description": "A lightweight monitoring dashboard with drag-and-drop widgets, endpoint health polling, session auth, and a light/dark theme. A small alternative to standing up a full Grafana stack.",
+        "image": "src/assets/images/vigil-card.svg",
+        "link": "https://github.com/CarterIrish/Vigil",
+        "status": "In Development",
+        "tech": ["TypeScript", "React", "Express", "MongoDB", "Redis"]
+    },
+    {
+        "Title": "Salesforce Contact Auditor",
+        "description": "A CLI that audits Salesforce contact exports against the ZoomInfo API to flag employment status, then enriches phone, email, and title by person ID. Throttled to 20 requests per second and caches every lookup so re-runs cost nothing in API credits. Clears ~2,900 rows in under five minutes.",
+        "image": "src/assets/images/auditor-card.svg",
+        "link": "https://github.com/CarterIrish/salesforce-contact-auditor",
+        "status": "In Development",
+        "tech": ["TypeScript", "Node.js", "ZoomInfo API"]
+    },
     {
         "Title": "You've Been Audited",
-        "description": "Play as our rogue protagonist, and protect your safe from the taxmen coming to take it from you!",
+        "description": "Play as our rogue protagonist and protect your safe from the taxmen coming to take it from you. A semester-long, four-person team project built around a data structures and algorithms curriculum.",
         "image": "src/assets/images/youve-been-audited-title.png",
         "link": "https://milkdiverdev.itch.io/youve-been-audited",
-        "status": "Completed"
+        "status": "Completed",
+        "tech": ["MonoGame", "C#"]
     },
     {
-        "Title": "Crazy Taxi",
-        "description": "A Unity experiement utilizing multiple different gameplay mechanics",
-        "image": "src/assets/images/CrazyTaxi.png",
-        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_03/",
-        "status": "Completed"
+        "Title": "SavePoint API",
+        "description": "A REST API for cataloguing and exploring a personal game library, written against Node's raw http module with no framework, so every status code and header is hand-rolled.",
+        "image": "src/assets/images/savepoint-card.svg",
+        "link": "https://github.com/CarterIrish/savepoint-api",
+        "status": "Completed",
+        "tech": ["Node.js", "JavaScript", "GitHub Actions"]
     },
-
     {
-        "Title": "Simple Fruit Ninja",
-        "description": "A simple fruit ninja game",
-        "image": "src/assets/images/SimpleFruit.png",
-        "link": "https://igme-202-2245.github.io/202-work-CarterIrish/Project_02/",
-        "status": "Completed"
-    },
-    
-    {
-        "Title": "RecAnime",
-        "description": "A class project that works with API's to get anime recomendations",
-        "image": "src/assets/images/RecAnimeHomepage.png",
-        "link": "https://people.rit.edu/cdi9919/235/src/projects/project2/landing.html",
-        "status": "Completed"
-    },
-
-    {
-        "Title": "Scramble",
-        "description": "A simple word guessing game",
-        "image": "src/assets/images/ScrambleLandingPage.png",
-        "link": "https://people.rit.edu/cdi9919/235/src/projects/project3/index.html",
-        "status": "Completed"
+        "Title": "Blackhole Simulation",
+        "description": "A real-time simulation of a black hole rendered with OpenGL, written to get deeper into graphics programming and C++ outside of an engine.",
+        "image": "src/assets/images/blackhole.jpg",
+        "link": "none",
+        "status": "In Development",
+        "tech": ["C++", "OpenGL"]
     }
 ]

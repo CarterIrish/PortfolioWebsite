@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" role="img" aria-label="SavePoint">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b2140"/>
+      <stop offset="100%" stop-color="#171029"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="400" fill="url(#g)"/>
+  <g fill="none" stroke="#b388ff" stroke-opacity="0.14" stroke-width="1">
+    <path d="M0 40 H700"/><path d="M0 80 H700"/><path d="M0 120 H700"/><path d="M0 160 H700"/><path d="M0 200 H700"/><path d="M0 240 H700"/><path d="M0 280 H700"/><path d="M0 320 H700"/><path d="M0 360 H700"/>
+    <path d="M50 0 V400"/><path d="M100 0 V400"/><path d="M150 0 V400"/><path d="M200 0 V400"/><path d="M250 0 V400"/><path d="M300 0 V400"/><path d="M350 0 V400"/><path d="M400 0 V400"/><path d="M450 0 V400"/><path d="M500 0 V400"/><path d="M550 0 V400"/><path d="M600 0 V400"/><path d="M650 0 V400"/>
+  </g>
+  <rect x="48" y="60" width="56" height="4" rx="2" fill="#b388ff"/>
+  <text x="350" y="200" text-anchor="middle" font-family="'Open Sans', Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" fill="#ffffff"><tspan x="350" y="200">SavePoint</tspan></text>
+  <text x="350" y="272" text-anchor="middle" font-family="'Open Sans', Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#b388ff" letter-spacing="3">REST API</text>
+</svg>

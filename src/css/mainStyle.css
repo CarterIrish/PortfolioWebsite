@@ -344,3 +344,49 @@ body {
     background-color: #1ed760;
     border: none;
 }
+/* --- Project tech tags --------------------------------------------------- */
+/* Rendered from the "tech" array in src/data/projects.json. */
+.project-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.project-tech li {
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Card contents were relying on the parent's 2rem row-gap, which put too much
+   air between the description and the tags. Tighten just inside .project-info. */
+.project-info .project-title {
+  margin-bottom: 0.75rem;
+}
+
+.project-info .project-description {
+  margin-bottom: 1rem;
+}
+
+/* Shown when JavaScript is off or projects.json fails to load. */
+.projects-fallback {
+  margin: 2.5rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.section-intro {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  font-size: 1.2rem;
+}
