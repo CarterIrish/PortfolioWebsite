@@ -14,3 +14,7 @@ Thumbs.db
 
 // Node Modules
 node_modules/
+
+// Local files
+src/assets/documents/*.pdf
+
