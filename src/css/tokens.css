@@ -1,0 +1,223 @@
+/* ─────────────────────────────────────────────
+   NOCTIS CORE · Design tokens
+   Vendored from the Noctis Systems design system
+   (_ds/noctis-systems-design-system-177e6159/colors_and_type.css).
+   Do not hand-edit: re-pull from the design system instead.
+   Product-level knob settings live in mainStyle.css.
+
+   Naming rule: tokens name a ROLE, never a product.
+   Theming rule: a theme sets the four knobs below and
+   nothing else. If a theme has to redefine ink, the
+   component was reading the wrong token.
+   ───────────────────────────────────────────── */
+
+:root {
+  color-scheme: dark;
+
+  /* ── KNOB 1 · Radius ─────────────────────── */
+  /* One value per build: 0 (instrument) → 12px (document) */
+  --radius: 0;
+  --radius-container: var(--radius);   /* cards, modals, panels */
+  --radius-control: var(--radius);     /* buttons, inputs, chips */
+  --radius-pill: 999px;                /* status dots, pills — never a knob */
+
+  /* ── KNOB 2 · Temperature ────────────────── */
+  /* Four surface steps + line + ink. Redefined only by [data-theme]. */
+  --color-paper:    #0a0f0d;   /* page */
+  --color-sub-bg:   #121815;   /* section / sidebar */
+  --color-raised:   #0d1311;   /* card, widget, input */
+  --color-input-bg: var(--color-raised);
+  --color-line:     #1a2220;   /* hairline, low contrast */
+  --color-line-strong: #2a3733; /* hairline on a raised surface */
+  --color-ink:      #e8efeb;
+  --color-mute:     #a7b3ae;   /* secondary text — 4.5:1 on paper */
+  --color-faint:    #6e7c77;   /* mono micro-labels only */
+  --color-hover-bg: rgba(255, 255, 255, 0.04);
+
+  /* ── KNOB 3 · Accent ─────────────────────── */
+  /* ONE accent per build. Set these three per product; never two live at once. */
+  --color-accent:      #22d3a5;
+  --color-accent-ink:  #04140d;                    /* text/icon ON an accent fill */
+  --color-accent-soft: rgba(34, 211, 165, 0.14);   /* active row, focus ring, modal halo */
+
+  /* ── KNOB 4 · Columns ────────────────────── */
+  --cols: 4;
+  --bp-compact: 600px;
+  --bp-medium: 1024px;
+  --panel-width: min(18rem, 100%);
+  --touch-target: 44px;              /* minimum tappable edge — not a knob */
+
+  /* ── Status · fixed, exempt from the accent rule ── */
+  --color-ok:         #10b981;
+  --color-warn:       #f59e0b;
+  --color-down:       #ef4444;
+  --color-error:      var(--color-down);
+  --color-danger:     var(--color-down);
+  --color-error-soft: rgba(239, 68, 68, 0.18);
+  /* On a paper theme, status text needs a darker ink than the dot: */
+  --color-ok-ink:    #0f7a5c;
+  --color-warn-ink:  #96620a;
+  --color-down-ink:  #b32626;
+
+  /* ── Type · two families, two roles ──────── */
+  /* Sans = a person talking. Mono = the machine talking. */
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Scale — every size used anywhere in the system must be one of these. */
+  --fs-mono:     0.75rem;    /* 12px — micro-labels, status, errors. FLOOR. */
+  --fs-tag:      0.75rem;
+  --fs-small:    0.8125rem;  /* 13px — dense UI, nav, chips */
+  --fs-ui:       0.875rem;   /* 14px — buttons, inputs, table cells */
+  --fs-body:     1rem;       /* 16px — body. FLOOR for prose. */
+  --fs-body-lg:  1.1875rem;  /* 19px — intro copy */
+  --fs-h3:       1.25rem;
+  --fs-h2:       1.5rem;
+  --fs-h1:       clamp(1.75rem, 4vw, 2.5rem);
+  --fs-display:  clamp(2rem, 5vw, 3rem);
+  --fs-readout:  clamp(2rem, 6vw, 2.5rem);
+
+  --lh-tight: 1.2;
+  --lh-base:  1.5;
+
+  --tracking-mono: 0.8px;
+  --tracking-logo: 2px;
+  --tracking-tag:  0.5px;
+
+  /* ── Spacing · 4px grid ──────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 4rem;
+
+  --space-gap:  1rem;
+  --space-card: 1rem;
+  --space-row:  1rem;
+
+  /* ── Borders · the invariant ──────────────── */
+  /* One hairline per container. Never two borders, never border + drop shadow. */
+  --border-thin:   1px solid var(--color-line);
+  --border-raised: 1px solid var(--color-line-strong);
+  --border-ink:    1px solid var(--color-ink);   /* modal only */
+  --border-card:   var(--border-thin);
+
+  /* ── Shadows ──────────────────────────────── */
+  --shadow-card:       0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-modal:      0 1px 3px rgba(0,0,0,0.08), 0 6px 24px rgba(0,0,0,0.08);
+  --shadow-modal-ring: 0 0 0 3px var(--color-accent-soft);
+  --shadow-focus-ring: 0 0 0 2px var(--color-accent-soft);
+
+  /* ── Motion · 120–200ms, ease, no exceptions ── */
+  --ease-snap:   120ms ease;
+  --ease-medium: 150ms ease;
+  --ease-soft:   200ms ease;
+}
+
+/* ── Temperature: paper ───────────────────────
+   Sets ONLY the knob-2 tokens. */
+[data-theme="paper"] {
+  color-scheme: light;
+  --color-paper:    #f7f6f4;
+  --color-sub-bg:   #efedea;
+  --color-raised:   #ffffff;
+  --color-line:     #e5e0d8;
+  --color-line-strong: #ded9d2;
+  --color-ink:      #14120f;
+  --color-mute:     #4a453d;
+  --color-faint:    #7d7669;
+  --color-hover-bg: rgba(0, 0, 0, 0.04);
+}
+
+/* ── Columns · the only thing a breakpoint changes ── */
+@media (max-width: 1024px) { :root { --cols: 2; } }
+@media (max-width: 600px)  { :root { --cols: 1; } }
+
+/* Touch pointers get the target floor regardless of width. */
+@media (pointer: coarse) {
+  :root { --touch-target: 44px; }
+}
+
+/* ─────────────────────────────────────────────
+   Element defaults
+   ───────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+h1, .h1 { font-size: var(--fs-h1); font-weight: 700; line-height: var(--lh-tight); }
+h2, .h2 { font-size: var(--fs-h2); font-weight: 600; line-height: var(--lh-tight); }
+h3, .h3 { font-size: var(--fs-h3); font-weight: 600; }
+
+.display  { font-size: var(--fs-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.4px; }
+.subtitle { font-size: var(--fs-h2); font-weight: 300; }
+
+/* Wordmark — mono, uppercase, 2px tracking */
+.logo-mark {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: var(--tracking-logo);
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+/* Machine speech: labels, state, identifiers, errors */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+p { font-size: var(--fs-body); color: inherit; text-wrap: pretty; }
+.text-mute  { color: var(--color-mute); }
+.text-faint { color: var(--color-faint); }
+
+code, kbd, pre, .mono { font-family: var(--font-mono); font-size: var(--fs-mono); }
+
+/* Long identifiers truncate — nothing scrolls sideways by accident */
+.truncate { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Focus · every interactive element, both surfaces ── */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-focus-ring);
+  outline: none;
+}
+
+/* ── Links ──────────────────────────────────── */
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { color: var(--color-ink); }
+
+a.link-grow { color: var(--color-ink); font-weight: 500; position: relative; }
+a.link-grow::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: currentColor;
+  transition: width var(--ease-soft);
+}
+a.link-grow:hover::after { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}

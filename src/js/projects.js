@@ -12,29 +12,33 @@ function escapeHtml(value) {
   })[char]);
 }
 
+// "In Development" -> "in-development", which is the modifier .status reads for
+// its dot colour. An unrecognised status renders with no dot rather than a wrong one.
+function statusModifier(status) {
+  return status.toLowerCase().replace(/\s+/g, '-');
+}
+
 function buildProjectCard(project) {
   const status = project.status
-    ? `<span class="project-tag ${escapeHtml(project.status.toLowerCase().replace(/\s+/g, '-'))}">${escapeHtml(project.status)}</span>`
+    ? `<div class="status ${escapeHtml(statusModifier(project.status))}">${escapeHtml(project.status)}</div>`
     : '';
 
   const tech = Array.isArray(project.tech) && project.tech.length
-    ? `<ul class="project-tech">${project.tech.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    ? `<ul class="tech-row">${project.tech.map((item) => `<li class="tech-chip">${escapeHtml(item)}</li>`).join('')}</ul>`
     : '';
 
   const link = project.link && project.link !== 'none'
-    ? `<a href="${escapeHtml(project.link)}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>`
+    ? `<a href="${escapeHtml(project.link)}" class="link-grow" target="_blank" rel="noopener noreferrer">View Project</a>`
     : '';
 
   return `
-      <div class="project-card">
+      <div class="pf-card">
+        <img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.Title)}" class="card-media" loading="lazy" decoding="async" />
         ${status}
-        <img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.Title)}" class="project-image" loading="lazy" decoding="async" />
-        <div class="project-info">
-          <h2 class="project-title">${escapeHtml(project.Title)}</h2>
-          <p class="project-description">${escapeHtml(project.description)}</p>
-          ${tech}
-          ${link}
-        </div>
+        <h3 class="h3">${escapeHtml(project.Title)}</h3>
+        <p class="card-text">${escapeHtml(project.description)}</p>
+        ${tech}
+        ${link}
       </div>
     `;
 }
@@ -57,6 +61,6 @@ function populateProjectsContainer() {
       console.error(error);
       // Never leave the section blank. A visitor who hits this still gets somewhere to go.
       projectsContainer.innerHTML =
-        '<p class="projects-fallback">Projects could not be loaded right now. You can browse them all on <a class="project-link" href="https://github.com/CarterIrish" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>';
+        '<p class="projects-fallback">Projects could not be loaded right now. You can browse them all on <a class="link-grow" href="https://github.com/CarterIrish" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>';
     });
 }
