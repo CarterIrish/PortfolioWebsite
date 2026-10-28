@@ -1,7 +1,7 @@
 [
     {
         "Title": "Rat Runner",
-        "description": "A survival horror game set in a maze of sewers. I built the NavMesh enemy AI and pursuit behavior, binary-serialized save/load, the inventory and door-key systems, and the game state machine. Five-person team.",
+        "description": "A survival horror game set in a maze of sewers. I built the dev console, inventory, door-key systems, and the game state machine. Five-person team.",
         "image": "src/assets/images/RatRunnerTitle.webp",
         "link": "https://lab.carterirish.net/RatRunner/",
         "status": "Completed",
